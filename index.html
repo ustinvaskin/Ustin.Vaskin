@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>Ustin Vaskin</title>
   <link rel="icon" href="./assets/favicon-scene.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
@@ -115,6 +116,8 @@
           <a href="https://www.instagram.com/ustin.m.v" target="_blank" rel="noreferrer noopener">instagram</a>
           <span aria-hidden="true"> • </span>
           <a href="images/ustin_cv.pdf" target="_blank" rel="noreferrer noopener">resume</a>
+          <span aria-hidden="true"> • </span>
+          <button id="tetris-open" class="footer-action" type="button">tetris</button>
         </span>
         <span class="footer-line footer-line--secondary muted">
           Oslo • <span id="footer-year">2026</span>
@@ -128,6 +131,42 @@
     <aside class="image-panel" aria-hidden="true">
       <canvas id="portrait-scene" class="ascii-frame"></canvas>
     </aside>
+  </div>
+
+  <div id="tetris-modal" class="game-modal" hidden>
+    <div class="game-modal__backdrop" data-close-game></div>
+    <section class="game-panel" role="dialog" aria-modal="true" aria-labelledby="tetris-title">
+      <div class="game-panel__header">
+        <button id="tetris-close" class="game-close" type="button" aria-label="Close tetris">close</button>
+      </div>
+      <div class="game-panel__body">
+        <canvas id="tetris-canvas" class="game-canvas" width="240" height="480"></canvas>
+        <div class="game-meta">
+          <div class="game-meta__stats">
+            <div class="game-stat">
+              <div class="label">score</div>
+              <span id="tetris-score" class="game-stat__value">0</span>
+            </div>
+            <div class="game-stat">
+              <div class="label">lines</div>
+              <span id="tetris-lines" class="game-stat__value">0</span>
+            </div>
+          </div>
+          <div class="game-meta__copy">
+            <p class="game-meta__line">A small break in the same dot-grid language as the scene.</p>
+            <p class="game-meta__line game-meta__controls"><span class="label-inline">controls</span> ← → move, ↑ rotate, ↓ drop</p>
+            <p class="game-meta__hint muted">space to hard drop, r to restart, esc to close</p>
+          </div>
+          <div class="game-touch" aria-label="Touch controls">
+            <button class="game-touch__btn" data-tetris-action="left" type="button">←</button>
+            <button class="game-touch__btn" data-tetris-action="rotate" type="button">↑</button>
+            <button class="game-touch__btn" data-tetris-action="right" type="button">→</button>
+            <button class="game-touch__btn game-touch__btn--wide" data-tetris-action="down" type="button">↓ drop</button>
+            <button class="game-touch__btn game-touch__btn--wide" data-tetris-action="hard-drop" type="button">space drop</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script src="./app.js"></script>
