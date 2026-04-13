@@ -1,190 +1,136 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- TODO change og image -->
-  <!-- <meta property="og:image" content="http://imgur.com/a/qtFfN"> -->
-  <!-- <meta property="og:title" content="ustin Tan - Designer" /> -->
-  <title>Ustinvaskin</title>
-
-  <!-- own style -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/animate.css" rel="stylesheet">
-  <link rel="icon" href="images/favicon.png" type="image/x-icon">
-  <script src="js/wow.js"></script>
-  <script>new WOW().init();</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135552925-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-135552925-1');
-  </script>
-  <script>
-    $(window).load(function () {
-      $(".loader").fadeOut("slow");
-    })
-      // setTimeout(function () {
-      //   $(".loader").fadeOut("slow");
-      // }, 1000);
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ustin Vaskin</title>
+  <link rel="icon" href="./assets/favicon-scene.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <div class="loader">
-    <div class="loader-logo wow pulse"></div>
-  </div>
-  <nav>
-    <div class="container">
-      <a class="logo">
-        ustin<span class="lite">vaskin</span>
-      </a>
-      <div class="links">
-        <a href="https://ustinvaskin.github.io/blog-umv/" target="_blank">blog</a>
-
-        <a href="images/ustin_cv.pdf" target="_blank">resume</a>
-      </div>
-    </div>
-  </nav>
-
-  <header>
-    <div class="hide-mobile">
-      <div class="intro-body">
-        <br />
-        <div class="name">Hi, I'm Ustin</div>
-        <div class="subtitle">Developer + Designer</div>
-        <p class="intro">Experienced in Web & Software Development, Data science, Creative Conception, Agile & Scrum
-          Methodologies.
+  <div class="page">
+    <main class="content">
+      <header class="header-block">
+        <h1>Ustin Vaskin</h1>
+        <p class="location">
+          <span class="location-label">in Oslo, Norway</span>
+          <span class="muted location-divider" aria-hidden="true"> • </span>
+          <span class="muted location-meta">
+            <span id="location-time" class="time">--:--:--</span>
+            <span id="location-weather" class="weather"></span>
+          </span>
         </p>
+      </header>
+
+      <div class="content-body">
+        <div class="content-body__gap content-body__gap--top" aria-hidden="true"></div>
+
+        <div class="content-body__main">
+          <section class="block">
+            <div class="label">making</div>
+            <p class="line">
+              <a class="company-link line-link" href="https://www.satos.no/" target="_blank" rel="noreferrer noopener">
+                frontend at
+                <span class="logo-wrapper has-image">
+                  <img class="logo" src="./assets/icons/satvision.png" alt="">
+                </span>
+                <span class="company-name">Satvision</span>
+                <span class="company-years muted">2023–</span>
+              </a>
+            </p>
+          </section>
+
+          <section class="block">
+            <div class="label">worked on</div>
+            <p class="line">
+              <a class="company-link line-link" href="https://www.arundo.com/" target="_blank"
+                rel="noreferrer noopener">
+                industrial analytics at
+                <span class="logo-wrapper has-image">
+                  <img class="logo" src="./assets/icons/arundo.png" alt="">
+                </span>
+                <span class="company-name">Arundo Analytics</span>
+                <span class="company-years muted">2021–2023</span>
+              </a>
+            </p>
+            <p class="line">
+              <a class="company-link line-link" href="https://en.itmo.ru/" target="_blank" rel="noreferrer noopener">
+                urban data tools at
+                <span class="logo-wrapper has-image">
+                  <img class="logo" src="./assets/icons/itmo.png" alt="">
+                </span>
+                <span class="company-name">ITMO University</span>
+                <span class="company-years muted">2020</span>
+              </a>
+            </p>
+            <p class="line">
+              <span class="company-link">
+                public-sector education products
+                <span class="company-years muted">2017–2018</span>
+              </span>
+            </p>
+          </section>
+
+          <section class="block">
+            <div class="label">into</div>
+            <p class="line">
+              React, TypeScript, design systems, automation
+            </p>
+          </section>
+
+          <section class="block">
+            <div class="label">reading</div>
+            <p class="line">
+              Mieko Kawakami, Sam Bett, David Boyd — <span class="company-name">All the Lovers in the Night</span>
+            </p>
+            <p class="line">
+              <span class="company-years muted">3.67 · 53,533 ratings · 8,646 reviews on </span>
+              <a class="company-link line-link" href="https://www.goodreads.com/" target="_blank"
+                rel="noreferrer noopener">Goodreads</a>
+            </p>
+          </section>
+
+          <section class="block">
+            <div class="label">writing</div>
+            <p class="line">
+              <a class="company-link line-link" href="https://ustinvaskin.github.io/articles/" target="_blank"
+                rel="noreferrer noopener">articles</a>
+            </p>
+          </section>
+        </div>
+
+        <div class="content-body__gap content-body__gap--bottom" aria-hidden="true"></div>
       </div>
-      <div class="profile-img">
-        <img src="images/ustin.jpg" class="img-responsive" width="150px">
-      </div>
-    </div>
-    <div class="hide-desktop">
 
-      <div class="profile-img">
-        <img src="images/ustin.jpg" class="img-responsive" width="200px">
-      </div>
-      <div class="intro-body">
-        <br />
-        <div class="name">Hi, I'm Ustin</div>
-        <div class="subtitle">Developer + Designer</div>
-      </div>
-    </div>
-  </header>
+      <footer class="footer">
+        <span class="footer-line">
+          <a href="mailto:ustin.vaskin2011@gmail.com">email</a>
+          <span aria-hidden="true"> • </span>
+          <a href="https://www.linkedin.com/in/ustinvaskin/" target="_blank" rel="noreferrer noopener">linkedin</a>
+          <span aria-hidden="true"> • </span>
+          <a href="https://github.com/ustinvaskin" target="_blank" rel="noreferrer noopener">github</a>
+          <span aria-hidden="true"> • </span>
+          <a href="https://ustinvaskin.github.io/articles/" target="_blank" rel="noreferrer noopener">articles</a>
+          <span aria-hidden="true"> • </span>
+          <a href="images/ustin_cv.pdf" target="_blank" rel="noreferrer noopener">resume</a>
+        </span>
+        <span class="footer-line footer-line--secondary muted">
+          Oslo • <span id="footer-year">2026</span>
+        </span>
+        <span class="footer-line footer-line--secondary muted">
+          made w ❤️
+        </span>
+      </footer>
+    </main>
 
-  <div class="projects-div">
-    <hr />
-    <div class="row">
-      <div class="col-md-8 col-sm-6 col-xs-12">
-        <a href="chatme.html" class="card-container wow fadeInLeft">
-          <div class="chatme-card card">
-            <div class="label">WEB DEVELOPMENT</div>
-            <div class="cta"></div>
-            <span class="view-cta">view project</span>
-            <div class="text">
-              <div class="title"><img src="images/chatme-logo.png"></div>
-              <div class="desc">Chat Mobile App</div>
-            </div>
-          </div>
-        </a>
-      </div><!-- ./col-sm-8 chatme -->
+    <aside class="image-panel" aria-hidden="true">
+      <canvas id="portrait-scene" class="ascii-frame"></canvas>
+    </aside>
+  </div>
 
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <a href="itmo.html" class="card-container wow fadeInRight">
-          <div class="itmo-card card">
-            <div class="label">UI/UX/Web App</div>
-            <div class="cta"></div>
-            <span class="view-cta">view project</span>
-            <div class="text">
-              <div class="title"><img src="images/itmo_logo.png" height="65px" style="margin-top:-16px;"></div>
-              <div class="desc" style="margin-top:-7px;"> Informational/<br /> Analytical platform
-              </div>
-            </div>
-          </div>
-        </a>
-      </div><!-- ./col-sm-4 itmo-->
-    </div><!-- ./ first row -->
-
-    <div class="row">
-      <div class="col-md-4">
-        <a href="sunmoon.html" class="card-container wow fadeInUp">
-          <div class="sunmoon-card card">
-            <div class="label">UI/UX/Web App</div>
-            <div class="cta"></div>
-            <span class="view-cta">view project</span>
-            <div class="text">
-              <div class="title"><img src="images/sunmoon_logo.png" height="24"></div>
-              <div class="desc">Astrological experience</div>
-            </div>
-          </div>
-        </a>
-      </div><!-- ./col-sm-8 chatme -->
-
-      <div class="col-md-4">
-        <a href="cabba.html" class="card-container wow fadeInUp">
-          <div class="cabba-card card">
-            <div class="label">BRANDING | UI DESIGN</div>
-            <div class="cta"></div>
-            <span class="view-cta">view project</span>
-            <div class="text dark">
-              <div class="title"><img src="images/cabba_logo.png" height="24"></div>
-              <div class="desc">Ignite possibility by introducing the world in movement <br /></div>
-            </div>
-          </div>
-        </a>
-      </div><!-- ./col-sm-4 itmo-->
-
-      <div class="col-md-4">
-        <a href="sink.html" class="card-container wow fadeInUp">
-          <div class="sink-card card dark">
-            <div class="label">WEB GAME</div>
-            <div class="cta grey"></div>
-            <span class="view-cta">view project</span>
-            <div class="text dark">
-              <div class="title"><img src="images/sink_logo.png" height="24"></div>
-              <div class="desc">Online game<br />SINK A SHIP, BABY!</div>
-            </div>
-          </div>
-        </a>
-      </div><!-- ./col-sm-8 chatme -->
-    </div><!-- ./ first row -->
-
-    <div class="row">
-      <div class="col-sm-12">
-        <a href="pfdo.html" class="st card-container wow fadeInLeft">
-          <div class="st-card card">
-            <div class="label">WEB Development/ Mobile App</div>
-            <div class="cta grey"></div>
-            <span class="view-cta">view project</span>
-            <div class="text dark hide-desktop">
-              <div class="title"><img src="images/pfdo_logo.png"></div>
-              <div class="desc"> Accessible Education for Children</div>
-            </div>
-
-          </div>
-        </a>
-      </div><!-- ./col-sm-12 pfdo -->
-    </div><!-- ./ first row -->
-  </div><!-- ./projects-div -->
-  <footer>
-    <div class="content">
-      <div class="name">USTIN<span class="lite">VASKIN</span></div>
-      <div class="email"> <a href="mailto: ustin.vaskin2011@gmail.com">ustin.vaskin2011@gmail.com</a>
-      </div>
-      <div class=" img-list">
-        <a href="https://www.linkedin.com/in/ustinvaskin/" target="_blank">linkedin</a>
-        <a href="https://github.com/ustinvaskin" target="_blank">github</a>
-      </div>
-    </div>
-  </footer>
+  <script src="./app.js"></script>
 </body>
 
 </html>
