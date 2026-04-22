@@ -210,7 +210,7 @@
   function loadWeather() {
     if (!weatherEl) return;
 
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=59.9139&longitude=10.7522&current=temperature_2m,weather_code&timezone=Europe%2FOslo", {
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=52.5200&longitude=13.4050&current=temperature_2m,weather_code&timezone=Europe%2FBerlin", {
       cache: "no-store"
     })
       .then(function (response) {
