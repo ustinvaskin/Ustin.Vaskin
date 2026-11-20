@@ -557,3 +557,53 @@ h2 em { font: italic 400 1.13em/.83 var(--serif); }
   h2 { font-size: 3.3rem; }
   .hero h1 { font-size: 24vw; }
 }
+
+/* Tundra project */
+.outcomes { margin-top: 1.2rem; border-top: 1px solid var(--line); }
+.outcomes p { font-size: .95rem; line-height: 1.5; }
+.writing-intro { margin: -1rem 0 2rem; max-width: 55ch; line-height: 1.5; }
+.project-nav { margin-bottom: 0; }
+.case-hero { background: var(--blue); color: white; padding-block: clamp(3rem, 7vw, 7rem); position: relative; overflow: hidden; }
+.case-hero h1 { position: relative; z-index: 1; font: 900 clamp(5.2rem, 15vw, 15rem)/.8 var(--display); letter-spacing: -.04em; margin: 2rem 0; overflow-wrap: anywhere; }
+.case-hero h1 span { color: var(--acid); }
+.case-lede { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 900px; align-items: start; }
+.case-lede > p { font: 400 clamp(2rem, 4.2vw, 4.2rem)/1.03 var(--serif); margin: 0; }
+.case-lede div { max-width: 32rem; line-height: 1.55; }
+.case-lede .pill { margin-top: 1rem; }
+.case-stamp { position: absolute; right: 4%; bottom: -3%; color: #ffffff19; font: 900 clamp(10rem, 26vw, 28rem)/.8 var(--display); letter-spacing: -.12em; pointer-events: none; }
+.case-grid, .case-example, .case-findings { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 7vw, 8rem); }
+.case-intro, .case-example, .case-architecture, .case-findings, .case-reading { padding-block: clamp(4rem, 8vw, 8rem); }
+.case-intro h2, .case-example h2, .case-findings h2, .case-reading h2 { font-size: clamp(3.8rem, 7.5vw, 8rem); }
+.case-prose { font-size: 1.125rem; line-height: 1.65; max-width: 55ch; }
+.case-prose p:first-child { margin-top: 0; }
+.case-example { background: #1a201b; color: var(--paper); align-items: center; }
+.case-example > div > p:not(.eyebrow) { max-width: 38ch; line-height: 1.55; margin: 1.7rem 0; }
+.case-example .pill:hover { background: var(--paper); color: var(--ink); }
+.case-code { background: #0e110e; padding: clamp(1.2rem, 3vw, 2.5rem); border-left: 3px solid var(--acid); min-width: 0; }
+.case-code p { color: var(--acid); font: 700 .75rem var(--mono); }
+.case-code pre { color: #e2eaba; white-space: pre-wrap; overflow-wrap: anywhere; font: 400 clamp(.75rem, 1.15vw, 1rem)/1.7 var(--mono); }
+.architecture-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.architecture-grid article { border-top: 1px solid var(--ink); padding-top: 1rem; }
+.architecture-grid h3 { font: 800 clamp(2rem, 3vw, 3.5rem)/1 var(--display); margin: .7rem 0; }
+.architecture-grid p:not(.eyebrow) { min-height: 4.5em; line-height: 1.5; max-width: 34ch; }
+.architecture-grid a, .case-results a { text-decoration: underline; text-underline-offset: .2em; }
+.case-findings { background: var(--acid); }
+.case-findings > div > p:not(.eyebrow) { max-width: 48ch; line-height: 1.6; }
+.case-results { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.case-results > div { border-top: 1px solid var(--ink); padding-top: 1rem; }
+.case-results span { font: 700 .75rem/1.5 var(--mono); }
+.case-results strong { display: block; font: 800 clamp(4rem, 7vw, 8rem)/1 var(--display); }
+.case-results strong small { font-size: .5em; }
+.case-results div p { line-height: 1.5; }
+.case-results .case-caveat, .case-results > a { grid-column: 1 / -1; line-height: 1.55; }
+.case-results .case-caveat { margin: .5rem 0 0; }
+.case-reading h2 { margin-bottom: 2rem; }
+.case-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); padding-block: 1.5rem; font-size: .875rem; }
+.case-footer a:last-child { text-decoration: underline; }
+@media (max-width: 670px) {
+  .case-lede, .case-grid, .case-example, .case-findings, .architecture-grid { grid-template-columns: minmax(0, 1fr); }
+  .case-lede { gap: 1.5rem; }
+  .case-hero h1 { font-size: clamp(5rem, 19vw, 8rem); }
+  .case-intro h2, .case-example h2, .case-findings h2, .case-reading h2 { font-size: clamp(3.4rem, 13vw, 5rem); }
+  .architecture-grid p:not(.eyebrow) { min-height: 0; }
+}

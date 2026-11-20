@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f5f2e9">
   <title>Ustin Vaskin — Software Engineer</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=2">
+  <script src="./app.js?v=2" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -102,7 +102,7 @@
           </div>
           <div class="project-copy">
             <p class="eyebrow">PROGRAMMING LANGUAGES / AI RESEARCH</p>
-            <h3><a href="https://ustinvaskin.github.io/articles/2026/04/20/Building-Tundra-Language-and-Interpreter,-Part-2-Definition-and-Experimentation.html">TundraTrace <span aria-hidden="true">↗</span></a></h3>
+            <h3><a href="./tundra.html">TundraTrace <span aria-hidden="true">↗</span></a></h3>
             <p>I built a language, interpreter, and evaluation tools to study whether runtime evidence helps language models repair programs. In a controlled benchmark, normalized repair success rose from 59.9% to 70.4%.</p>
           </div>
         </article>
@@ -117,7 +117,11 @@
           <div class="project-copy">
             <p class="eyebrow">WEB &amp; MOBILE ENGINEERING</p>
             <h3><a href="https://www.satos.no/">Satvision Software <span aria-hidden="true">↗</span></a></h3>
-            <p>I lead frontend development at Satvision and build mobile apps. My work includes shared interface components and features that let people keep working offline.</p>
+            <p>I lead frontend development at Satvision and build mobile apps, shared components, and features that let people keep working offline.</p>
+            <div class="outcomes">
+              <p><strong>Faster delivery.</strong> A Vite upgrade cut build time by approximately 39% and the initial browser payload from 7.6 MB to 2.0 MB.</p>
+              <p><strong>Safer translations.</strong> Automated translation checks in ESLint and CI help catch missing translations before release.</p>
+            </div>
           </div>
         </article>
 
@@ -221,6 +225,7 @@
       <div class="about-copy">
         <h2>About <em>me</em></h2>
         <p>I’m a software engineer based in Oslo. I work across frontend platforms, mobile apps, and backend services, with a soft spot for developer tools and programming languages.</p>
+        <p>I’m curious about how a well-designed tool can make a difficult problem feel understandable.</p>
         <a class="pill" href="#writing">Read my writing</a>
       </div>
       <div class="experience">
@@ -254,6 +259,7 @@
         <h2 id="writing-title">Selected <em>writing</em></h2>
         <a class="pill" href="https://ustinvaskin.github.io/articles/">All articles ↗</a>
       </div>
+      <p class="writing-intro">Notes from the workbench, from frontend development to the questions behind TundraTrace.</p>
       <div class="reading-pair">
         <article>
           <p class="eyebrow">2020 / IN RUSSIAN</p>
@@ -264,6 +270,11 @@
           <p class="eyebrow">2026 / IN ENGLISH</p>
           <h3><a hreflang="en" href="https://ustinvaskin.github.io/articles/2026/05/18/When-Runtime-Evidence-Helps-LLMs-Repair-Code-and-When-It-Does-Not.html">When runtime evidence helps ↗</a></h3>
           <p>When does showing a language model the values from a failed run help it fix the bug?</p>
+        </article>
+        <article>
+          <p class="eyebrow">2026 / TUNDRA LANGUAGE</p>
+          <h3><a href="https://ustinvaskin.github.io/articles/2026/05/13/Building-Tundra-Language-and-Interpreter-Part-4-From-Grammar-to-Testbed.html">From grammar to testbed ↗</a></h3>
+          <p>How a small language became a controlled environment for studying program repair.</p>
         </article>
       </div>
     </section>
