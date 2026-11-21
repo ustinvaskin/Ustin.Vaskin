@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f5f2e9">
   <title>Ustin Vaskin — Software Engineer</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=2">
-  <script src="./app.js?v=2" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=3">
+  <script src="./app.js?v=3" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -282,8 +282,23 @@
 
   <footer id="contact" class="contact gutter">
     <div class="contact-main">
-      <h2>Get in <em>touch.</em></h2>
-      <a class="pill primary-action" href="mailto:ustin.vaskin2011@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+      <div><p class="eyebrow">SAY HELLO</p><h2>Get in <em>touch.</em></h2><p>Have a question or an idea? Send me a message.</p></div>
+      <form class="contact-form" id="contact-form" method="post" data-endpoint="https://formspree.io/f/xldnekqn">
+        <fieldset disabled>
+          <label for="contact-name">Name <span>(optional)</span></label>
+          <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100">
+          <label for="contact-email">Your email</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" maxlength="5000" required></textarea>
+          <div class="contact-trap" aria-hidden="true">
+            <label for="contact-gotcha">Leave this field empty</label>
+            <input id="contact-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="pill" type="submit">Send message</button>
+        </fieldset>
+        <p class="contact-status" role="status" aria-live="polite">Contact form is temporarily unavailable.</p>
+      </form>
     </div>
     <div class="footer-links">
       <span>© <span id="footer-year">2026</span> Ustin Vaskin</span>

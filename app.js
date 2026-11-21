@@ -57,3 +57,34 @@ chartControls.addEventListener("click", (event) => {
   });
   document.querySelector(".metric-caption").textContent = metric.label;
 });
+
+// Add the Formspree HTTPS endpoint to data-endpoint on the contact form.
+const contactForm = document.querySelector("#contact-form");
+const contactFields = contactForm.querySelector("fieldset");
+const contactStatus = contactForm.querySelector(".contact-status");
+const contactButton = contactForm.querySelector('button[type="submit"]');
+const endpoint = contactForm.dataset.endpoint;
+if (/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint)) {
+  contactFields.disabled = false;
+  contactStatus.textContent = "";
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    contactButton.disabled = true;
+    contactStatus.textContent = "Sending your message…";
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" }
+      });
+      if (!response.ok) throw new Error("Submission failed");
+      contactForm.reset();
+      contactStatus.textContent = "Thanks for your message. I’ll get back to you soon.";
+    } catch {
+      contactStatus.textContent = "Your message could not be sent. Please try again.";
+    } finally {
+      contactButton.disabled = false;
+    }
+  });
+}

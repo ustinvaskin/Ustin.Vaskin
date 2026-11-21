@@ -607,3 +607,21 @@ h2 em { font: italic 400 1.13em/.83 var(--serif); }
   .case-intro h2, .case-example h2, .case-findings h2, .case-reading h2 { font-size: clamp(3.4rem, 13vw, 5rem); }
   .architecture-grid p:not(.eyebrow) { min-height: 0; }
 }
+
+.contact-main { align-items: start; gap: clamp(2rem, 5vw, 5rem); }
+.contact-main > div { flex: 1; }
+.contact-main > div > p:last-child { max-width: 30ch; font-size: 1.1rem; line-height: 1.5; }
+.contact-form { width: min(100%, 480px); }
+.contact-form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; display: grid; gap: .55rem; }
+.contact-form label { font-weight: 700; margin-top: .6rem; }
+.contact-form label span { font-weight: 400; }
+.contact-form input, .contact-form textarea {
+  border: 1px solid var(--ink); border-radius: 0; padding: .8rem;
+  background: var(--paper); color: var(--ink); font: inherit; width: 100%;
+}
+.contact-form textarea { resize: vertical; min-height: 7.5rem; }
+.contact-form button { justify-self: start; margin-top: .65rem; cursor: pointer; }
+.contact-form button:disabled { opacity: .55; cursor: not-allowed; }
+.contact-form input:disabled, .contact-form textarea:disabled { opacity: .65; }
+.contact-status { margin: .8rem 0 0; line-height: 1.4; }
+.contact-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
