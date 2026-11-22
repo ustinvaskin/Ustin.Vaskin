@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A look at designing reliable offline work in the SATOS mobile app.">
+  <link rel="canonical" href="https://ustinvaskin.github.io/Ustin.Vaskin/satos.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ustin Vaskin">
+  <meta property="og:title" content="Offline work at SATOS — Ustin Vaskin">
+  <meta property="og:description" content="Building reliable mobile experiences for work without a connection.">
+  <meta property="og:url" content="https://ustinvaskin.github.io/Ustin.Vaskin/satos.html">
+  <meta property="og:image" content="https://ustinvaskin.github.io/Ustin.Vaskin/assets/share/portfolio.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f2e9">
+  <title>Offline work at SATOS — Ustin Vaskin</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=9">
+  <link rel="stylesheet" href="./assets/site-navigation.css?v=5">
+  <script src="./assets/site-navigation.js?v=5" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="monogram" href="./index.html" aria-label="Ustin Vaskin, home">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+      <nav id="site-menu" aria-label="Main navigation">
+        <a href="./index.html#work" aria-current="true">Work</a>
+        <a href="./index.html#showroom">Showroom</a>
+        <a href="./index.html#about">About</a>
+        <a href="/articles/#start-here">Writing</a>
+              <a href="./resume.html">Résumé</a>
+      </nav>
+      <div class="top-actions">
+        <button class="pill menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+        <a class="pill top-contact" href="./index.html#contact" data-contact-trigger>Contact</a>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="case-hero satos-hero gutter">
+      <p class="eyebrow">SATVISION / MOBILE ENGINEERING</p>
+      <h1>Work that<br><span>stays with you.</span></h1>
+      <div class="case-lede">
+        <p>What happens when the connection disappears?</p>
+        <div><p>I worked on offline data handling in the SATOS mobile app, helping people keep their changes and attachments while working without a reliable connection.</p><a class="pill primary-action" href="#offline-story">Explore the approach <span class="site-icon site-icon--down" aria-hidden="true"></span></a></div>
+      </div>
+    </section>
+    <section class="case-intro gutter case-grid">
+      <div><p class="eyebrow">THE CHALLENGE</p><h2>Work doesn’t<br><em>wait for Wi-Fi.</em></h2></div>
+      <div class="case-prose"><p>Industrial work can take people away from a dependable network. An app needs to make it possible to keep working and preserve the changes made along the way.</p><p>The challenge is to carry those changes, including attachments, through a sync without losing local work. My focus was improving the mobile app’s offline data handling and reliability.</p></div>
+    </section>
+    <section class="offline-story gutter" id="offline-story" aria-labelledby="offline-title">
+      <div><p class="eyebrow">THE EXPERIENCE</p><h2 id="offline-title">One edit.<br><em>Three moments.</em></h2><p>This illustration shows the general flow of offline work. It is not a screenshot of the SATOS app.</p></div>
+      <div class="offline-demo">
+        <div class="offline-steps" role="group" aria-label="Explore the offline workflow">
+          <button type="button" data-step="offline" aria-pressed="true">1. Work offline</button>
+          <button type="button" data-step="saved" aria-pressed="false">2. Save locally</button>
+          <button type="button" data-step="sync" aria-pressed="false">3. Reconnect</button>
+        </div>
+        <div class="offline-art" aria-hidden="true"><div class="offline-device"><div class="offline-device-line"></div><div class="offline-check">✓</div><div class="offline-bars"><i></i><i></i><i></i></div></div><div class="offline-orbit"><i></i><i></i><i></i></div></div>
+        <div class="offline-copy" aria-live="polite"><h3>Keep working offline</h3><p>A person makes an edit and adds an attachment while the device is disconnected.</p></div>
+      </div>
+    </section>
+    <section class="case-architecture gutter">
+      <div class="section-heading"><h2>Building for<br><em>the in-between.</em></h2></div>
+      <div class="architecture-grid">
+        <article><p class="eyebrow">PRESERVE</p><h3>Save changes together</h3><p>I used SQLite transactions to keep local changes consistent as they are recorded.</p></article>
+        <article><p class="eyebrow">KEEP</p><h3>Include attachments</h3><p>Offline edits can include files, so the workflow needs to preserve those attachments alongside the pending work.</p></article>
+        <article><p class="eyebrow">RECONNECT</p><h3>Resume synchronization</h3><p>When the connection returns, pending updates can be sent to the service and local state kept in sync.</p></article>
+      </div>
+    </section>
+    <section class="satos-outcome gutter case-grid">
+      <div><p class="eyebrow">THE RESULT</p><h2>More reliable<br><em>offline work.</em></h2></div>
+      <div class="case-prose"><p>The work improved how the app preserves local changes and attachments during synchronization. I also addressed reliability issues in authentication, database migrations, and cached data loading.</p><p>The aim was straightforward: make the app more dependable for people doing real work in the field.</p><a class="pill" href="https://www.satos.no/">About SATOS <span class="site-icon site-icon--external" aria-hidden="true"></span></a></div>
+    </section>
+  </main>
+  <script src="./satos.js?v=1" defer></script>
+  <footer class="case-footer gutter">
+    <a class="monogram" href="./index.html">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+    <span>© Ustin Vaskin</span>
+    <a href="./index.html#work">Back to selected work <span class="site-icon site-icon--up" aria-hidden="true"></span></a>
+  </footer>
+</body>
+</html>

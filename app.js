@@ -19,9 +19,10 @@ motionButton.addEventListener("click", () => setMotion(!motionEnabled));
 motionPreference.addEventListener("change", (event) => setMotion(!event.matches));
 setMotion(motionEnabled);
 
-const guess = document.querySelector(".trace-guess");
-const result = document.querySelector(".trace-result");
-const feedback = document.querySelector(".guess-feedback");
+const traceDesk = document.querySelector(".trace-desk");
+const guess = traceDesk.querySelector(".trace-guess");
+const verdict = traceDesk.querySelector(".trace-verdict");
+const hint = traceDesk.querySelector(".trace-hint");
 guess.hidden = false;
 function showGuessFeedback() {
   const line = guess.querySelector(":checked")?.value;
@@ -30,10 +31,13 @@ function showGuessFeedback() {
     7: "Exactly. Line 7 selects the wrong row.",
     8: "Line 8 prints the record it was given."
   };
-  feedback.textContent = answers[line] || "";
+  const found = line === "7";
+  verdict.hidden = !found;
+  traceDesk.toggleAttribute("data-bug-found", found);
+  hint.textContent = answers[line] || "";
 }
 guess.addEventListener("change", showGuessFeedback);
-result.addEventListener("toggle", showGuessFeedback);
+showGuessFeedback();
 
 const chartControls = document.querySelector(".chart-controls");
 const bars = document.querySelectorAll(".metric-bars li");
@@ -57,34 +61,3 @@ chartControls.addEventListener("click", (event) => {
   });
   document.querySelector(".metric-caption").textContent = metric.label;
 });
-
-// Add the Formspree HTTPS endpoint to data-endpoint on the contact form.
-const contactForm = document.querySelector("#contact-form");
-const contactFields = contactForm.querySelector("fieldset");
-const contactStatus = contactForm.querySelector(".contact-status");
-const contactButton = contactForm.querySelector('button[type="submit"]');
-const endpoint = contactForm.dataset.endpoint;
-if (/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint)) {
-  contactFields.disabled = false;
-  contactStatus.textContent = "";
-  contactForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    if (!contactForm.reportValidity()) return;
-    contactButton.disabled = true;
-    contactStatus.textContent = "Sending your message…";
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        body: new FormData(contactForm),
-        headers: { Accept: "application/json" }
-      });
-      if (!response.ok) throw new Error("Submission failed");
-      contactForm.reset();
-      contactStatus.textContent = "Thanks for your message. I’ll get back to you soon.";
-    } catch {
-      contactStatus.textContent = "Your message could not be sent. Please try again.";
-    } finally {
-      contactButton.disabled = false;
-    }
-  });
-}

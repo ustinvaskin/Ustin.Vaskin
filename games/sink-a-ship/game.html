@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="An 8×8 naval guessing game, first built by Ustin Vaskin in 2019.">
+  <title>Sink a Ship, Baby! — Ustin Vaskin</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css?v=4">
+  <script type="module" src="./app.js?v=3"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="back-link" href="../../index.html#early-projects"><span class="arrow-back" aria-hidden="true"></span>Portfolio</a>
+    <button class="control sound-toggle" id="muteControl" type="button" aria-pressed="false" aria-label="Sound">
+      <span class="sound-indicator" aria-hidden="true"></span><span id="sound-label">Sound off</span>
+    </button>
+  </header>
+  <main class="game-shell">
+    <div class="masthead">
+      <div class="masthead-copy">
+        <div class="headline">
+          <p class="label">USTIN VASKIN / 2019 BROWSER GAME</p>
+          <h1>Sink a ship, <em>baby!</em></h1>
+        </div>
+        <p class="game-instructions">Find the six ships hidden on the grid before you run out of shots.</p>
+      </div>
+    </div>
+
+    <div class="play-area">
+      <section class="board-panel" aria-labelledby="board-title">
+        <header class="board-header">
+          <h2 id="board-title">The grid</h2>
+          <dl class="round-stats">
+            <div><dt>Shots left</dt><dd><strong id="shots-left">35</strong><span id="shots-total"> / 35</span></dd></div>
+            <div><dt>Ships sunk</dt><dd><strong id="ships-sunk">0</strong><span> / 6</span></dd></div>
+          </dl>
+        </header>
+        <p id="message" role="status" data-tone="neutral">Choose a square to fire your first shot.</p>
+        <div class="board-face">
+          <div class="column-labels" aria-hidden="true"></div>
+          <div class="row-labels" aria-hidden="true"></div>
+          <div id="board" class="board" role="group" aria-label="Game board" aria-describedby="board-keys"></div>
+        </div>
+        <noscript><p>Enable JavaScript to play the game.</p></noscript>
+        <div class="board-info">
+          <p class="board-keys" id="board-keys">Arrow keys move. Enter or Space fires.</p>
+          <ul class="shot-legend" aria-label="Square legend">
+            <li><i data-state="miss" aria-hidden="true"></i>Miss</li>
+            <li><i data-state="hit" aria-hidden="true"></i>Hit</li>
+            <li><i data-state="sunk" aria-hidden="true"></i>Sunk</li>
+            <li id="reveal-legend" hidden><i data-state="revealed" aria-hidden="true"></i>Unfound ship</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="game-sidebar" aria-label="Round controls and fleet">
+        <div class="round-controls">
+          <label for="difficulty" class="label">DIFFICULTY</label>
+          <div class="difficulty-field">
+            <select class="control" id="difficulty" aria-describedby="difficulty-note">
+              <option value="44">Easy · 44 shots</option>
+              <option value="35" selected>Normal · 35 shots</option>
+              <option value="30">Hard · 30 shots</option>
+            </select>
+          </div>
+          <button class="control new-round" id="new-game" type="button">New game<span aria-hidden="true">+</span></button>
+          <p id="difficulty-note">Changing difficulty during a round applies to your next game.</p>
+        </div>
+        <div class="fleet-panel">
+          <h2>The fleet</h2>
+          <ul id="ships" aria-label="Fleet status"></ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

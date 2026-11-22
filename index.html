@@ -4,25 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ustin Vaskin, a software engineer in Oslo. Selected work in frontend platforms, mobile apps, industrial analytics, and programming language research.">
+  <link rel="canonical" href="https://ustinvaskin.github.io/Ustin.Vaskin/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ustin Vaskin">
+  <meta property="og:title" content="Ustin Vaskin — Software Engineer">
+  <meta property="og:description" content="Software engineer building frontend platforms, mobile apps, and research tools.">
+  <meta property="og:url" content="https://ustinvaskin.github.io/Ustin.Vaskin/">
+  <meta property="og:image" content="https://ustinvaskin.github.io/Ustin.Vaskin/assets/share/portfolio.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f5f2e9">
   <title>Ustin Vaskin — Software Engineer</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=3">
-  <script src="./app.js?v=3" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=9">
+  <script src="./app.js?v=5" defer></script>
+  <link rel="stylesheet" href="./assets/site-navigation.css?v=5">
+  <script src="./assets/site-navigation.js?v=5" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="topbar">
-    <a class="monogram" href="#top" aria-label="Ustin Vaskin, home">UV<span>.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#showroom">Showroom</a>
-      <a href="#about">About</a>
-      <a href="#writing">Writing</a>
-    </nav>
-    <div class="top-actions">
-      <button class="motion-toggle" type="button" aria-label="Motion" aria-pressed="false" hidden>Motion off</button>
-      <a class="pill top-contact" href="#contact">Contact</a>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="monogram" href="#top" aria-label="Ustin Vaskin, home">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+      <nav id="site-menu" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#showroom">Showroom</a>
+        <a href="#about">About</a>
+        <a href="/articles/#start-here" data-current-section="writing">Writing</a>
+              <a href="./resume.html">Résumé</a>
+      </nav>
+      <div class="top-actions">
+        <button class="motion-toggle" type="button" aria-label="Motion" aria-pressed="false" hidden>Motion off</button>
+        <button class="pill menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+        <a class="pill top-contact" href="#contact" data-contact-trigger>Contact</a>
+      </div>
     </div>
   </header>
 
@@ -39,7 +55,7 @@
             <p class="eyebrow hero-role">SOFTWARE ENGINEER <span></span> OSLO, NO</p>
             <p>I build industrial interfaces and tools for studying how AI repairs code.</p>
           </div>
-          <a class="pill primary-action" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+          <a class="pill primary-action" href="#work">Explore my work <span class="site-icon site-icon--down" aria-hidden="true"></span></a>
         </div>
       </div>
 
@@ -66,7 +82,7 @@
     <section id="work" class="work gutter">
       <div class="section-heading">
         <h2>Selected <em>work</em></h2>
-        <span class="eyebrow">PRODUCT &amp; RESEARCH</span>
+        <a class="pill" href="#showroom">Project showroom <span class="site-icon site-icon--down" aria-hidden="true"></span></a>
       </div>
 
       <div class="projects">
@@ -82,7 +98,7 @@
               <li><code>  { label: "high", value: 30 }</code></li>
               <li><code>];</code></li>
               <li aria-label="Blank line"><code>&nbsp;</code></li>
-              <li><code>val selected = rows[2];</code></li>
+              <li data-bug-line><code>val selected = rows[2];</code></li>
               <li><code>print(selected.value);</code></li>
             </ol>
             <fieldset class="trace-guess" hidden>
@@ -91,18 +107,21 @@
               <label><input type="radio" name="trace-line" value="7"> Line 7</label>
               <label><input type="radio" name="trace-line" value="8"> Line 8</label>
             </fieldset>
+            <p class="guess-feedback" role="status" aria-atomic="true">
+              <strong class="trace-verdict" hidden>✓ BUG FOUND</strong>
+              <span class="trace-hint"></span>
+            </p>
             <details class="trace-result">
               <summary><span>Reveal trace</span><span>Hide trace</span></summary>
               <div class="trace-answer">
-                <strong class="guess-feedback" aria-live="polite"></strong>
                 <p><code>rows[2]</code> selected the third record, labeled “high”. Its value was 30. The target is the second record. Changing line 7 to <code>rows[1]</code> gives 20.</p>
-                <a href="https://github.com/ustinvaskin/TundraTrace-artifacts/blob/main/bench/results/experiments/20260515-144516-thesis-scale-final-2026-05-15/deepseek-coder-6.7b/prompts/repair_008_wrong_index_nested_list__provenance-assisted__trial-01.txt">View the recorded example ↗</a>
+                <a href="https://github.com/ustinvaskin/TundraTrace-artifacts/blob/main/bench/results/experiments/20260515-144516-thesis-scale-final-2026-05-15/deepseek-coder-6.7b/prompts/repair_008_wrong_index_nested_list__provenance-assisted__trial-01.txt">View the recorded example <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
               </div>
             </details>
           </div>
           <div class="project-copy">
             <p class="eyebrow">PROGRAMMING LANGUAGES / AI RESEARCH</p>
-            <h3><a href="./tundra.html">TundraTrace <span aria-hidden="true">↗</span></a></h3>
+            <h3><a href="./tundra.html">TundraTrace <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
             <p>I built a language, interpreter, and evaluation tools to study whether runtime evidence helps language models repair programs. In a controlled benchmark, normalized repair success rose from 59.9% to 70.4%.</p>
           </div>
         </article>
@@ -116,7 +135,7 @@
           </div>
           <div class="project-copy">
             <p class="eyebrow">WEB &amp; MOBILE ENGINEERING</p>
-            <h3><a href="https://www.satos.no/">Satvision Software <span aria-hidden="true">↗</span></a></h3>
+            <h3><a href="./satos.html">Satvision Software <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
             <p>I lead frontend development at Satvision and build mobile apps, shared components, and features that let people keep working offline.</p>
             <div class="outcomes">
               <p><strong>Faster delivery.</strong> A Vite upgrade cut build time by approximately 39% and the initial browser payload from 7.6 MB to 2.0 MB.</p>
@@ -145,7 +164,7 @@
           </figure>
           <div class="project-copy">
             <p class="eyebrow">DATA VISUALIZATION / DESIGN SYSTEMS</p>
-            <h3><a href="https://www.arundo.com/">Arundo Analytics <span aria-hidden="true">↗</span></a></h3>
+            <h3><a href="https://www.arundo.com/">Arundo Analytics <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
             <p>SAM helps plant operators plan around production, energy use, and maintenance forecasts. At Arundo, I developed frontend modules and shared interface components for the product.</p>
           </div>
         </article>
@@ -155,7 +174,7 @@
     <section id="showroom" class="showroom gutter" aria-labelledby="showroom-title">
       <div class="section-heading">
         <h2 id="showroom-title">Project <em>showroom</em></h2>
-        <a class="pill" href="https://github.com/ustinvaskin?tab=repositories">All repositories ↗</a>
+        <a class="pill" href="https://github.com/ustinvaskin?tab=repositories">All repositories <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
       </div>
       <div class="exhibits">
         <article class="exhibit">
@@ -164,7 +183,7 @@
             <b>7<span>_</span></b>
           </div>
           <p class="eyebrow">JAVA / LANGUAGE DESIGN</p>
-          <h3><a href="https://github.com/ustinvaskin/TundraCore">TundraCore <span aria-hidden="true">↗</span></a></h3>
+          <h3><a href="https://github.com/ustinvaskin/TundraCore">TundraCore <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
           <p>The little language behind my repair experiments. Its Java interpreter runs examples with variables, loops, and records.</p>
         </article>
         <article class="exhibit">
@@ -173,7 +192,7 @@
             <b>Sim<em>Hash</em></b>
           </div>
           <p class="eyebrow">RUST / PERFORMANCE</p>
-          <h3><a href="https://github.com/ustinvaskin/headroom-kth-submission/commit/459674f52ee320e0ea82362a5a4c8270438006a8">Headroom <span aria-hidden="true">↗</span></a></h3>
+          <h3><a href="https://github.com/ustinvaskin/headroom-kth-submission/commit/459674f52ee320e0ea82362a5a4c8270438006a8">Headroom <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
           <p>Profiling led me to Headroom’s fingerprinting code. I removed avoidable allocations when hashing ASCII text and benchmarked the change.</p>
         </article>
         <article class="exhibit">
@@ -182,13 +201,13 @@
             <b>Rundown</b>
           </div>
           <p class="eyebrow">REACT / BROADCAST AUTOMATION</p>
-          <h3><a href="https://github.com/ustinvaskin/sofie-core/commit/2e58ca8d8d4917bc466f377754a61666eb239434">Sofie Core <span aria-hidden="true">↗</span></a></h3>
+          <h3><a href="https://github.com/ustinvaskin/sofie-core/commit/2e58ca8d8d4917bc466f377754a61666eb239434">Sofie Core <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
           <p>I fixed how Sofie handles ignored media warnings so operators see a consistent status across the timeline, storyboard, and inspector.</p>
         </article>
       </div>
       <aside class="patch-note" aria-label="Open-source contribution">
         <p><strong>Immutable.js</strong> · I made <code>Range.toString()</code> easier to read. Merged March 25, 2025.</p>
-        <a href="https://github.com/immutable-js/immutable-js/pull/2075/files">View the diff ↗</a>
+        <a href="https://github.com/immutable-js/immutable-js/pull/2075/files">View the diff <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
       </aside>
       <div id="early-projects" class="early-projects">
         <h3 class="early-heading">Early projects <span>2019</span></h3>
@@ -199,6 +218,7 @@
             </div>
             <p class="eyebrow">JAVASCRIPT / BROWSER GAME</p>
             <h4>Sink a ship, baby!</h4>
+            <a class="pill play-game-link" href="./games/sink-a-ship/game.html">Play the game <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
             <p>My first browser game was a solo build at General Assembly. I spent a week turning a grid of HTML elements into a game of Battleship, with ships placed randomly each round.</p>
           </article>
           <article class="exhibit">
@@ -214,7 +234,7 @@
               <div class="book-stack"><i></i><i></i><i></i></div>
             </div>
             <p class="eyebrow">REACT / NODE.JS / MONGODB</p>
-            <h4><a href="https://github.com/Deni402/project-3">BamBook <span aria-hidden="true">↗</span></a></h4>
+            <h4><a href="https://github.com/Deni402/project-3">BamBook <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h4>
             <p>We built a place for readers to discuss books and writers to share stories. I worked on the data models, API, sign-in, and forms.</p>
           </article>
         </div>
@@ -226,6 +246,7 @@
         <h2>About <em>me</em></h2>
         <p>I’m a software engineer based in Oslo. I work across frontend platforms, mobile apps, and backend services, with a soft spot for developer tools and programming languages.</p>
         <p>I’m curious about how a well-designed tool can make a difficult problem feel understandable.</p>
+        <a class="pill" href="./resume.html">View résumé</a>
         <a class="pill" href="#writing">Read my writing</a>
       </div>
       <div class="experience">
@@ -249,7 +270,7 @@
             <span><strong>Best Producer winner</strong> · 2016 Beverly Hills Film Festival</span>
           </a>
           <p>I worked as assistant producer to Ian Waddell on this documentary about young voters and how they engage with politics.</p>
-          <a class="pill" href="https://vimeo.com/ondemand/thedrop">See the film on Vimeo ↗</a>
+          <a class="pill" href="https://vimeo.com/ondemand/thedrop">See the film on Vimeo <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
         </div>
       </article>
     </section>
@@ -257,23 +278,23 @@
     <section class="writing gutter" id="writing" aria-labelledby="writing-title">
       <div class="section-heading">
         <h2 id="writing-title">Selected <em>writing</em></h2>
-        <a class="pill" href="https://ustinvaskin.github.io/articles/">All articles ↗</a>
+        <a class="pill" href="https://ustinvaskin.github.io/articles/">All articles <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
       </div>
       <p class="writing-intro">Notes from the workbench, from frontend development to the questions behind TundraTrace.</p>
       <div class="reading-pair">
         <article>
           <p class="eyebrow">2020 / IN RUSSIAN</p>
-          <h3><a hreflang="ru" href="https://ustinvaskin.github.io/articles/2020/11/11/React-Hooks.html">A guide to React Hooks ↗</a></h3>
+          <h3><a hreflang="ru" href="https://ustinvaskin.github.io/articles/2020/11/11/React-Hooks.html">A guide to React Hooks <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
           <p>How can two components share the same behavior through a custom hook?</p>
         </article>
         <article>
           <p class="eyebrow">2026 / IN ENGLISH</p>
-          <h3><a hreflang="en" href="https://ustinvaskin.github.io/articles/2026/05/18/When-Runtime-Evidence-Helps-LLMs-Repair-Code-and-When-It-Does-Not.html">When runtime evidence helps ↗</a></h3>
+          <h3><a hreflang="en" href="https://ustinvaskin.github.io/articles/2026/05/18/When-Runtime-Evidence-Helps-LLMs-Repair-Code-and-When-It-Does-Not.html">When runtime evidence helps <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
           <p>When does showing a language model the values from a failed run help it fix the bug?</p>
         </article>
         <article>
           <p class="eyebrow">2026 / TUNDRA LANGUAGE</p>
-          <h3><a href="https://ustinvaskin.github.io/articles/2026/05/13/Building-Tundra-Language-and-Interpreter-Part-4-From-Grammar-to-Testbed.html">From grammar to testbed ↗</a></h3>
+          <h3><a href="https://ustinvaskin.github.io/articles/2026/05/13/Building-Tundra-Language-and-Interpreter-Part-4-From-Grammar-to-Testbed.html">From grammar to testbed <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
           <p>How a small language became a controlled environment for studying program repair.</p>
         </article>
       </div>
@@ -283,8 +304,8 @@
   <footer id="contact" class="contact gutter">
     <div class="contact-main">
       <div><p class="eyebrow">SAY HELLO</p><h2>Get in <em>touch.</em></h2><p>Have a question or an idea? Send me a message.</p></div>
-      <form class="contact-form" id="contact-form" method="post" data-endpoint="https://formspree.io/f/xldnekqn">
-        <fieldset disabled>
+      <form class="contact-form" id="contact-form" method="post" action="https://formspree.io/f/xldnekqn">
+        <fieldset>
           <label for="contact-name">Name <span>(optional)</span></label>
           <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100">
           <label for="contact-email">Your email</label>
@@ -297,14 +318,14 @@
           </div>
           <button class="pill" type="submit">Send message</button>
         </fieldset>
-        <p class="contact-status" role="status" aria-live="polite">Contact form is temporarily unavailable.</p>
+        <p class="contact-status" role="status" aria-live="polite"></p>
       </form>
     </div>
     <div class="footer-links">
       <span>© <span id="footer-year">2026</span> Ustin Vaskin</span>
       <a href="https://www.linkedin.com/in/ustinvaskin/">LinkedIn</a>
       <a href="https://github.com/ustinvaskin">GitHub</a>
-      <a href="#top">Back to top ↑</a>
+      <a href="#top">Back to top <span class="site-icon site-icon--up" aria-hidden="true"></span></a>
     </div>
   </footer>
 </body>

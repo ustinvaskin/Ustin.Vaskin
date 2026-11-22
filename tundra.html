@@ -4,22 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="TundraTrace explores when compact runtime evidence helps language models repair code.">
+  <link rel="canonical" href="https://ustinvaskin.github.io/Ustin.Vaskin/tundra.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ustin Vaskin">
+  <meta property="og:title" content="TundraTrace — Ustin Vaskin">
+  <meta property="og:description" content="Exploring how runtime evidence can help language models repair code.">
+  <meta property="og:url" content="https://ustinvaskin.github.io/Ustin.Vaskin/tundra.html">
+  <meta property="og:image" content="https://ustinvaskin.github.io/Ustin.Vaskin/assets/share/tundra.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f5f2e9">
   <title>TundraTrace — Ustin Vaskin</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=2">
+  <link rel="stylesheet" href="./styles.css?v=9">
+  <link rel="stylesheet" href="./assets/site-navigation.css?v=5">
+  <script src="./assets/site-navigation.js?v=5" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="topbar project-nav">
-    <a class="monogram" href="./index.html" aria-label="Ustin Vaskin, home">UV<span>.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="./index.html#work">Work</a>
-      <a href="./index.html#showroom">Showroom</a>
-      <a href="./index.html#about">About</a>
-      <a href="./index.html#writing">Writing</a>
-    </nav>
-    <div class="top-actions"><a class="pill top-contact" href="./index.html#contact">Contact</a></div>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="monogram" href="./index.html" aria-label="Ustin Vaskin, home">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+      <nav id="site-menu" aria-label="Main navigation">
+        <a href="./index.html#work" aria-current="true">Work</a>
+        <a href="./index.html#showroom">Showroom</a>
+        <a href="./index.html#about">About</a>
+        <a href="/articles/#start-here">Writing</a>
+              <a href="./resume.html">Résumé</a>
+      </nav>
+      <div class="top-actions">
+        <button class="pill menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+        <a class="pill top-contact" href="./index.html#contact" data-contact-trigger>Contact</a>
+      </div>
+    </div>
   </header>
   <main id="main">
     <section class="case-hero gutter">
@@ -27,7 +45,7 @@
       <h1>Tundra<span>Trace.</span></h1>
       <div class="case-lede">
         <p>What if a model could see how a program reached its mistake?</p>
-        <div><p>I built a small language, interpreter, and benchmark to study when runtime evidence helps language models repair code.</p><a class="pill primary-action" href="#findings">Explore the results ↓</a></div>
+        <div><p>I built a small language, interpreter, and benchmark to study when runtime evidence helps language models repair code.</p><a class="pill primary-action" href="#findings">Explore the results <span class="site-icon site-icon--down" aria-hidden="true"></span></a></div>
       </div>
       <div class="case-stamp" aria-hidden="true"><span>{</span><span>t</span><span>}</span></div>
     </section>
@@ -40,7 +58,7 @@
       </div>
     </section>
     <section class="case-example gutter">
-      <div><p class="eyebrow">A SMALL EXAMPLE</p><h2>Where did<br><em>the value come from?</em></h2><p>A failure can point to an addition. A trace can also follow the value back to its source.</p><a class="pill" href="./index.html#tundra-demo">Try the interactive example ↗</a></div>
+      <div><p class="eyebrow">A SMALL EXAMPLE</p><h2>Where did<br><em>the value come from?</em></h2><p>A failure can point to an addition. A trace can also follow the value back to its source.</p><a class="pill" href="./index.html#tundra-demo">Try the interactive example <span class="site-icon site-icon--external" aria-hidden="true"></span></a></div>
       <div class="case-code">
         <p>PROGRAM</p>
         <pre><code>val raw = { price: "10" };
@@ -54,9 +72,9 @@ raw.price was string "10"</code></pre>
     <section class="case-architecture gutter">
       <div class="section-heading"><h2>How it <em>fits together.</em></h2></div>
       <div class="architecture-grid">
-        <article><p class="eyebrow">LANGUAGE</p><h3>TundraCore</h3><p>A small Java interpreter for running controlled programs.</p><a href="https://github.com/ustinvaskin/TundraCore">Explore the interpreter ↗</a></article>
-        <article><p class="eyebrow">RUNTIME EVIDENCE</p><h3>TundraTrace</h3><p>The trace-enabled interpreter captures compact evidence about how execution reached a failure.</p><a href="https://github.com/ustinvaskin/TundraTrace">Explore the trace ↗</a></article>
-        <article><p class="eyebrow">EVALUATION</p><h3>TundraBench</h3><p>Paired prompts, repair tasks, and scoring tools compare model behavior with and without evidence.</p><a href="https://github.com/ustinvaskin/TundraBench">Explore the benchmark ↗</a></article>
+        <article><p class="eyebrow">LANGUAGE</p><h3>TundraCore</h3><p>A small Java interpreter for running controlled programs.</p><a href="https://github.com/ustinvaskin/TundraCore">Explore the interpreter <span class="site-icon site-icon--external" aria-hidden="true"></span></a></article>
+        <article><p class="eyebrow">RUNTIME EVIDENCE</p><h3>TundraTrace</h3><p>The trace-enabled interpreter captures compact evidence about how execution reached a failure.</p><a href="https://github.com/ustinvaskin/TundraTrace">Explore the trace <span class="site-icon site-icon--external" aria-hidden="true"></span></a></article>
+        <article><p class="eyebrow">EVALUATION</p><h3>TundraBench</h3><p>Paired prompts, repair tasks, and scoring tools compare model behavior with and without evidence.</p><a href="https://github.com/ustinvaskin/TundraBench">Explore the benchmark <span class="site-icon site-icon--external" aria-hidden="true"></span></a></article>
       </div>
     </section>
     <section id="findings" class="case-findings gutter">
@@ -65,23 +83,23 @@ raw.price was string "10"</code></pre>
         <div><span>ERROR OR FAILURE ONLY</span><strong>59.9<small>%</small></strong><p>194 of 324 normalized repairs succeeded.</p></div>
         <div><span>WITH RUNTIME EVIDENCE</span><strong>70.4<small>%</small></strong><p>228 of 324 normalized repairs succeeded.</p></div>
         <p class="case-caveat">This is a controlled benchmark in a small custom language. The study found an overall advantage, but the cleanest low-leakage subset did not show a stable benefit. These results do not establish the same effect in mainstream languages or production systems.</p>
-        <a href="https://github.com/ustinvaskin/TundraTrace-artifacts/blob/main/bench/results/curated/final-run-summary-2026-05-15.md">Read the full result summary ↗</a>
+        <a href="https://github.com/ustinvaskin/TundraTrace-artifacts/blob/main/bench/results/curated/final-run-summary-2026-05-15.md">Read the full result summary <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
       </div>
     </section>
     <section class="case-reading gutter">
       <p class="eyebrow">CONTINUE EXPLORING</p>
       <h2>Read the <em>story.</em></h2>
       <div class="reading-pair">
-        <article><p class="eyebrow">THE RESEARCH</p><h3><a href="https://ustinvaskin.github.io/articles/2026/05/18/When-Runtime-Evidence-Helps-LLMs-Repair-Code-and-When-It-Does-Not.html">When runtime evidence helps ↗</a></h3><p>What the results suggest, where they fall short, and what I want to explore next.</p></article>
-        <article><p class="eyebrow">BUILDING TUNDRA</p><h3><a href="https://ustinvaskin.github.io/articles/2026/05/13/Building-Tundra-Language-and-Interpreter-Part-4-From-Grammar-to-Testbed.html">From grammar to testbed ↗</a></h3><p>How an interpreter became a controlled environment for studying repairs.</p></article>
+        <article><p class="eyebrow">THE RESEARCH</p><h3><a href="https://ustinvaskin.github.io/articles/2026/05/18/When-Runtime-Evidence-Helps-LLMs-Repair-Code-and-When-It-Does-Not.html">When runtime evidence helps <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3><p>What the results suggest, where they fall short, and what I want to explore next.</p></article>
+        <article><p class="eyebrow">BUILDING TUNDRA</p><h3><a href="https://ustinvaskin.github.io/articles/2026/05/13/Building-Tundra-Language-and-Interpreter-Part-4-From-Grammar-to-Testbed.html">From grammar to testbed <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3><p>How an interpreter became a controlled environment for studying repairs.</p></article>
       </div>
-      <a class="pill" href="https://github.com/ustinvaskin/TundraTrace-artifacts">View the research artifacts ↗</a>
+      <a class="pill" href="https://github.com/ustinvaskin/TundraTrace-artifacts">View the research artifacts <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
     </section>
   </main>
   <footer class="case-footer gutter">
-    <a class="monogram" href="./index.html">UV<span>.</span></a>
+    <a class="monogram" href="./index.html">UV<span class="monogram-dot" aria-hidden="true"></span></a>
     <span>© Ustin Vaskin</span>
-    <a href="./index.html#work">Back to selected work ↑</a>
+    <a href="./index.html#work">Back to selected work <span class="site-icon site-icon--up" aria-hidden="true"></span></a>
   </footer>
 </body>
 </html>
