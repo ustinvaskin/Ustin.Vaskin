@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="Браузерная игра Устина Васькина. Найдите и потопите шесть кораблей на поле 8 × 8.">
+  <title>Потопи корабль, детка! — Устин Васькин</title>
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css?v=5">
+  <script type="module" src="./app.js?v=2"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="back-link" href="../../index.html#early-projects"><span class="arrow-back" aria-hidden="true"></span>К проектам</a>
+    <a class="lang-switch" href="../../../games/sink-a-ship/game.html" hreflang="en" lang="en" aria-label="English version">ENG</a>
+    <button class="control sound-toggle" id="muteControl" type="button" aria-pressed="false" aria-label="Звук">
+      <span class="sound-indicator" aria-hidden="true"></span><span id="sound-label">Звук выключен</span>
+    </button>
+  </header>
+  <main class="game-shell">
+    <div class="masthead">
+      <div class="masthead-copy">
+        <div class="headline">
+          <p class="label">УСТИН ВАСЬКИН / БРАУЗЕРНАЯ ИГРА 2019 ГОДА</p>
+          <h1>Потопи корабль, <em>детка!</em></h1>
+        </div>
+        <p class="game-instructions">Потопите все шесть кораблей, пока не закончились выстрелы.</p>
+      </div>
+    </div>
+
+    <div class="play-area">
+      <section class="board-panel" aria-labelledby="board-title">
+        <header class="board-header">
+          <h2 id="board-title">Игровое поле</h2>
+          <dl class="round-stats">
+            <div><dt>Осталось выстрелов</dt><dd><strong id="shots-left">35</strong><span id="shots-total"> / 35</span></dd></div>
+            <div><dt>Потоплено кораблей</dt><dd><strong id="ships-sunk">0</strong><span> / 6</span></dd></div>
+          </dl>
+        </header>
+        <p id="message" role="status" data-tone="neutral">Выберите клетку для первого выстрела.</p>
+        <div class="board-face">
+          <div class="column-labels" aria-hidden="true"></div>
+          <div class="row-labels" aria-hidden="true"></div>
+          <div id="board" class="board" role="group" aria-label="Игровое поле" aria-describedby="board-keys"></div>
+        </div>
+        <noscript><p>Чтобы начать игру, включите JavaScript.</p></noscript>
+        <div class="board-info">
+          <p class="board-keys" id="board-keys">Выберите клетку стрелками. Чтобы выстрелить, нажмите Enter или пробел.</p>
+          <ul class="shot-legend" aria-label="Обозначения клеток">
+            <li><i data-state="miss" aria-hidden="true"></i>Промах</li>
+            <li><i data-state="hit" aria-hidden="true"></i>Попадание</li>
+            <li><i data-state="sunk" aria-hidden="true"></i>Корабль потоплен</li>
+            <li id="reveal-legend" hidden><i data-state="revealed" aria-hidden="true"></i>Оставшиеся корабли</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="game-sidebar" aria-label="Настройки игры и список кораблей">
+        <div class="round-controls">
+          <label for="difficulty" class="label">СЛОЖНОСТЬ</label>
+          <div class="difficulty-field">
+            <select class="control" id="difficulty" aria-describedby="difficulty-note">
+              <option value="44">Лёгкий · 44 выстрела</option>
+              <option value="35" selected>Обычный · 35 выстрелов</option>
+              <option value="30">Сложный · 30 выстрелов</option>
+            </select>
+          </div>
+          <button class="control new-round" id="new-game" type="button">Новая игра<span aria-hidden="true">+</span></button>
+          <p id="difficulty-note">После первого выстрела смена сложности подействует только в следующей игре.</p>
+        </div>
+        <div class="fleet-panel">
+          <h2>Флот</h2>
+          <ul id="ships" aria-label="Корабли и попадания"></ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

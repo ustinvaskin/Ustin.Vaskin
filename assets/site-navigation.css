@@ -165,3 +165,25 @@ html:has(.contact-dialog[open]) { overflow: hidden; }
   .site-header nav { grid-row: 2; grid-column: 1 / -1; gap: 1.2rem; }
   .site-header .top-actions { grid-row: 1; grid-column: 2; }
 }
+
+.lang-switch { display: inline-flex; align-items: center; min-height: 36px; font: 700 .75rem var(--mono); text-decoration: none; }
+.lang-switch:hover, .lang-switch:focus-visible { text-decoration: underline; text-underline-offset: .2em; }
+html[lang="ru"] { --display: "Arial Narrow", "Arial", sans-serif; }
+@media (max-width: 365px) { .lang-switch { font-size: .65rem; } }
+@media (max-width: 365px) {
+  html[lang="ru"] .site-header .topbar { column-gap: .2rem; }
+  html[lang="ru"] .site-header .top-actions { gap: .2rem; }
+  html[lang="ru"] .site-header .top-actions .pill,
+  html[lang="ru"] .site-header .motion-toggle { padding-inline: .32rem; font-size: .62rem; }
+}
+html[lang="ru"] .pill { white-space: normal; text-align: center; }
+@media (max-width: 450px) {
+  html[lang="ru"] .site-header .topbar { column-gap: .2rem; }
+  html[lang="ru"] .site-header .top-actions { gap: .2rem; }
+  html[lang="ru"] .site-header .top-actions .pill,
+  html[lang="ru"] .site-header .motion-toggle { padding-inline: .32rem; font-size: .62rem; }
+}
+@media (max-width: 365px) {
+  .site-header .top-actions { gap: .2rem; }
+  .site-header .topbar { column-gap: .25rem; }
+}

@@ -714,3 +714,25 @@ h2 em { font: italic 400 1.13em/.83 var(--serif); }
 }
 
 .play-game-link { margin: .25rem 0 .65rem; position: relative; z-index: 1; }
+@media (max-width: 670px) {
+  html[lang="ru"] h2 { font-size: clamp(2.7rem, 11vw, 4rem); overflow-wrap: anywhere; }
+  html[lang="ru"] .film-poster strong { font-family: "Barlow Condensed", Impact, sans-serif; }
+}
+html[lang="ru"] .case-lede,
+html[lang="ru"] .case-grid,
+html[lang="ru"] .case-example,
+html[lang="ru"] .case-findings { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+html[lang="ru"] .case-intro h2,
+html[lang="ru"] .case-example h2,
+html[lang="ru"] .case-findings h2,
+html[lang="ru"] .case-reading h2 { overflow-wrap: anywhere; }
+@media (max-width: 670px) {
+  html[lang="ru"] .case-lede,
+  html[lang="ru"] .case-grid,
+  html[lang="ru"] .case-example,
+  html[lang="ru"] .case-findings { grid-template-columns: minmax(0, 1fr); }
+}
+html[lang="ru"] .hero h1 { font-size: clamp(3.2rem, 8vw, 8rem); }
+@media (max-width: 670px) {
+  html[lang="ru"] .hero h1 { font-size: clamp(3.2rem, 15vw, 6rem); }
+}

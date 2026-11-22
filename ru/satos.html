@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Как мобильное приложение SATOS сохраняет изменения и файлы, когда на объекте пропадает связь.">
+  <meta name="theme-color" content="#f5f2e9">
+  <title>SATOS: работа без связи — Устин Васькин</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=12">
+  <link rel="stylesheet" href="../assets/site-navigation.css?v=7">
+  <script src="../assets/site-navigation.js?v=7" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="monogram" href="./index.html" aria-label="Устин Васькин, главная">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+      <nav id="site-menu" aria-label="Основная навигация">
+        <a href="./index.html#work" aria-current="true">Работы</a>
+        <a href="./index.html#showroom">Проекты</a>
+        <a href="./index.html#about">Обо мне</a>
+        <a href="/articles/#start-here">Статьи</a>
+        <a href="./resume.html">Резюме</a>
+      </nav>
+      <div class="top-actions">
+        <a class="lang-switch" href="../satos.html" hreflang="en" lang="en" aria-label="English version">ENG</a>
+
+        <button class="pill menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Меню</button>
+        <a class="pill top-contact" href="./index.html#contact" data-contact-trigger>Связаться</a>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="case-hero satos-hero gutter">
+      <p class="eyebrow">SATVISION / МОБИЛЬНАЯ РАЗРАБОТКА</p>
+      <h1>Работа<br><span>без связи.</span></h1>
+      <div class="case-lede">
+        <p>Что происходит, когда пропадает интернет?</p>
+        <div><p>Я доработал мобильное приложение SATOS, чтобы люди могли сохранять изменения и прикреплённые файлы даже без интернета.</p><a class="pill primary-action" href="#offline-story">Как это работает <span class="site-icon site-icon--down" aria-hidden="true"></span></a></div>
+      </div>
+    </section>
+    <section class="case-intro gutter case-grid">
+      <div><p class="eyebrow">ЗАДАЧА</p><h2>Связь пропала.<br><em>Работа идёт.</em></h2></div>
+      <div class="case-prose"><p>На производственных объектах связь бывает нестабильной. Сотрудникам всё равно нужно вносить правки и прикреплять файлы.</p><p>Приложение должно сохранить всё на устройстве, пока сети нет, и передать данные на сервер, когда связь вернётся. Я работал над тем, чтобы правки и файлы сохранялись на каждом этапе.</p></div>
+    </section>
+    <section class="offline-story gutter" id="offline-story" aria-labelledby="offline-title">
+      <div><p class="eyebrow">ИНТЕРАКТИВНЫЙ ПРИМЕР</p><h2 id="offline-title">Одна правка.<br><em>Три шага.</em></h2><p>Выберите шаг, чтобы увидеть, что происходит с правкой без связи и после подключения.</p></div>
+      <div class="offline-demo">
+        <div class="offline-steps" role="group" aria-label="Этапы работы без связи">
+          <button type="button" data-step="offline" aria-pressed="true">1. Внести правку</button>
+          <button type="button" data-step="saved" aria-pressed="false">2. Сохранить</button>
+          <button type="button" data-step="sync" aria-pressed="false">3. Отправить</button>
+        </div>
+        <div class="offline-art" aria-hidden="true"><div class="offline-device"><div class="offline-device-line"></div><div class="offline-check">✓</div><div class="offline-bars"><i></i><i></i><i></i></div></div><div class="offline-orbit"><i></i><i></i><i></i></div></div>
+        <div class="offline-copy" aria-live="polite"><h3>Интернета нет</h3><p>Вы вносите правку и прикрепляете файл прямо на объекте.</p></div>
+      </div>
+    </section>
+    <section class="case-architecture gutter">
+      <div class="section-heading"><h2>Как SATOS<br><em>сохраняет данные.</em></h2></div>
+      <div class="architecture-grid">
+        <article><p class="eyebrow">ПРАВКИ</p><h3>Записать всё вместе</h3><p>Я использовал транзакции SQLite. Благодаря им связанные изменения сохраняются одной операцией, даже если правка затрагивает сразу несколько записей.</p></article>
+        <article><p class="eyebrow">ФАЙЛЫ</p><h3>Сохранить вложения</h3><p>Прикреплённые файлы остаются на устройстве вместе с правками до отправки.</p></article>
+        <article><p class="eyebrow">СИНХРОНИЗАЦИЯ</p><h3>Передать на сервер</h3><p>Когда связь возвращается, приложение может отправить накопленные правки на сервер и обновить данные на устройстве.</p></article>
+      </div>
+    </section>
+    <section class="satos-outcome gutter case-grid">
+      <div><p class="eyebrow">РЕЗУЛЬТАТ</p><h2>Надёжнее<br><em>даже без сети.</em></h2></div>
+      <div class="case-prose"><p>Правки и файлы теперь надёжнее сохраняются при обмене данными с сервером. Я также исправил сбои при входе в приложение, обновлении базы данных и загрузке ранее сохранённых данных.</p><a class="pill" href="https://www.satos.no/">О приложении SATOS <span class="site-icon site-icon--external" aria-hidden="true"></span></a></div>
+    </section>
+  </main>
+  <script src="./satos.js?v=2" defer></script>
+  <footer class="case-footer gutter">
+    <a class="monogram" href="./index.html">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+    <span>© Устин Васькин</span>
+    <a href="./index.html#work">Вернуться к работам <span class="site-icon site-icon--up" aria-hidden="true"></span></a>
+  </footer>
+</body>
+</html>

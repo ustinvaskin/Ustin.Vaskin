@@ -229,3 +229,6 @@ button { cursor: pointer; }
   .tile[data-state]:not([data-hull-axis])::before { animation: shot-mark-in .22s ease-out both; }
 }
 @keyframes shot-mark-in { from { opacity: 0; scale: .45; } }
+.lang-switch { color: inherit; font: 700 .75rem "Space Mono", monospace; text-decoration: none; margin-left: auto; margin-right: .8rem; }
+.lang-switch:hover { text-decoration: underline; }
+html[lang="ru"] { --display: "Arial Narrow", "Arial", sans-serif; }

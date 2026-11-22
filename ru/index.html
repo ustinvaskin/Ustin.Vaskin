@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Устин Васькин, разработчик из Осло. Мои проекты, статьи и исследования о том, как ИИ исправляет ошибки в коде.">
+  <meta name="theme-color" content="#f5f2e9">
+  <title>Устин Васькин — разработчик</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=12">
+  <script src="./app.js?v=2" defer></script>
+  <link rel="stylesheet" href="../assets/site-navigation.css?v=7">
+  <script src="../assets/site-navigation.js?v=7" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="monogram" href="#top" aria-label="Устин Васькин, главная">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+      <nav id="site-menu" aria-label="Основная навигация">
+        <a href="#work">Работы</a>
+        <a href="#showroom">Проекты</a>
+        <a href="#about">Обо мне</a>
+        <a href="/articles/#start-here" hreflang="en" data-current-section="writing">Статьи</a>
+        <a href="./resume.html">Резюме</a>
+      </nav>
+      <div class="top-actions">
+        <a class="lang-switch" href="../" hreflang="en" lang="en" aria-label="English version">ENG</a>
+
+        <button class="motion-toggle" type="button" aria-label="Анимация" aria-pressed="false" hidden>Анимация выкл.</button>
+        <button class="pill menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Меню</button>
+        <a class="pill top-contact" href="#contact" data-contact-trigger>Связаться</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero gutter" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title" aria-label="Привет, я Устин Васькин.">
+          <span class="hero-greeting">Привет, я</span>
+          <span class="hero-line"><span>УСТИН</span></span>
+          <span class="hero-line second-line"><span>ВАСЬКИН<span class="period">.</span></span></span>
+        </h1>
+        <div class="hero-intro">
+          <div>
+            <p class="eyebrow hero-role">РАЗРАБОТЧИК <span></span> ОСЛО, НОРВЕГИЯ</p>
+            <p>Я делаю веб-сервисы и мобильные приложения для промышленности. А ещё исследую, как ИИ находит и исправляет ошибки в коде.</p>
+          </div>
+          <a class="pill primary-action" href="#work">Посмотреть работы <span class="site-icon site-icon--down" aria-hidden="true"></span></a>
+        </div>
+      </div>
+
+      <figure class="art-panel" id="portrait">
+        <div class="portrait-halo" aria-hidden="true"></div>
+        <img class="hero-portrait" src="../assets/ustin-portrait-soft-light.webp" width="1076" height="1462" alt="Скульптурный портрет Устина Васькина на синем и салатовом фоне." fetchpriority="high">
+      </figure>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>REACT ✦ TYPESCRIPT ✦ ДИЗАЙН-СИСТЕМЫ ✦ FLUTTER ✦ .NET ✦</span>
+        <span>REACT ✦ TYPESCRIPT ✦ ДИЗАЙН-СИСТЕМЫ ✦ FLUTTER ✦ .NET ✦</span>
+        <span>REACT ✦ TYPESCRIPT ✦ ДИЗАЙН-СИСТЕМЫ ✦ FLUTTER ✦ .NET ✦</span>
+        <span>REACT ✦ TYPESCRIPT ✦ ДИЗАЙН-СИСТЕМЫ ✦ FLUTTER ✦ .NET ✦</span>
+        <span>REACT ✦ TYPESCRIPT ✦ ДИЗАЙН-СИСТЕМЫ ✦ FLUTTER ✦ .NET ✦</span>
+        <span>REACT ✦ TYPESCRIPT ✦ ДИЗАЙН-СИСТЕМЫ ✦ FLUTTER ✦ .NET ✦</span>
+        <span>REACT ✦ TYPESCRIPT ✦ ДИЗАЙН-СИСТЕМЫ ✦ FLUTTER ✦ .NET ✦</span>
+        <span>REACT ✦ TYPESCRIPT ✦ ДИЗАЙН-СИСТЕМЫ ✦ FLUTTER ✦ .NET ✦</span>
+      </div>
+    </div>
+
+    <section id="work" class="work gutter">
+      <div class="section-heading">
+        <h2>Избранные <em>работы</em></h2>
+        <a class="pill" href="#showroom">Все проекты <span class="site-icon site-icon--down" aria-hidden="true"></span></a>
+      </div>
+
+      <div class="projects">
+        <article class="project project-research">
+          <div class="trace-desk" id="tundra-demo">
+            <p class="eyebrow">TUNDRA / ЗАДАЧА 008</p>
+            <h4>Где ошибка?</h4>
+            <p>Программа должна показывать <strong>20</strong>, а показывает <strong>30</strong>.</p>
+            <ol class="trace-code" aria-label="Код примера на Tundra">
+              <li><code>val rows = [</code></li>
+              <li><code>  { label: "low", value: 10 },</code></li>
+              <li><code>  { label: "target", value: 20 },</code></li>
+              <li><code>  { label: "high", value: 30 }</code></li>
+              <li><code>];</code></li>
+              <li aria-label="Пустая строка"><code> </code></li>
+              <li data-bug-line><code>val selected = rows[2];</code></li>
+              <li><code>print(selected.value);</code></li>
+            </ol>
+            <fieldset class="trace-guess" hidden>
+              <legend>В какой строке ошибка?</legend>
+              <label><input type="radio" name="trace-line" value="3"> Строка 3</label>
+              <label><input type="radio" name="trace-line" value="7"> Строка 7</label>
+              <label><input type="radio" name="trace-line" value="8"> Строка 8</label>
+            </fieldset>
+            <p class="guess-feedback" role="status" aria-atomic="true">
+              <strong class="trace-verdict" hidden>✓ ОШИБКА НАЙДЕНА</strong>
+              <span class="trace-hint"></span>
+            </p>
+            <details class="trace-result">
+              <summary><span>Посмотреть разбор</span><span>Скрыть разбор</span></summary>
+              <div class="trace-answer">
+                <p>В этом списке счёт начинается с нуля. Поэтому <code>rows[2]</code> берёт третью запись со значением 30. Чтобы выбрать вторую запись и получить 20, в строке 7 нужно заменить <code>rows[2]</code> на <code>rows[1]</code>.</p>
+                <a href="https://github.com/ustinvaskin/TundraTrace-artifacts/blob/main/bench/results/experiments/20260515-144516-thesis-scale-final-2026-05-15/deepseek-coder-6.7b/prompts/repair_008_wrong_index_nested_list__provenance-assisted__trial-01.txt">Открыть пример из эксперимента <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
+              </div>
+            </details>
+          </div>
+          <div class="project-copy">
+            <p class="eyebrow">ЯЗЫКИ ПРОГРАММИРОВАНИЯ / ИССЛЕДОВАНИЯ ИИ</p>
+            <h3><a href="./tundra.html">TundraTrace <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+            <p>Что, если показать ИИ, что происходило внутри программы в момент ошибки? Чтобы это проверить, я создал свой язык программирования и набор тестов. В одном из экспериментов подсказки о ходе выполнения подняли итоговый показатель успешных исправлений с 59,9% до 70,4%.</p>
+          </div>
+        </article>
+
+        <article id="satvision" class="project project-satvision">
+          <div class="project-art satvision-art" aria-hidden="true">
+            <div class="device-pair">
+              <div class="web-frame"><i class="device-orb"></i></div>
+              <div class="mobile-frame"><i class="device-orb"></i></div>
+            </div>
+          </div>
+          <div class="project-copy">
+            <p class="eyebrow">ВЕБ И МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</p>
+            <h3><a href="./satos.html">Satvision Software <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+            <p>В Satvision я отвечаю за разработку веб-интерфейсов и работаю над мобильными приложениями. Одна из задач — сделать так, чтобы приложение оставалось полезным там, где пропадает интернет.</p>
+            <div class="outcomes">
+              <p><strong>Меньше ждать.</strong> Сборка новой версии занимает примерно на 39% меньше времени. При первом открытии приложения браузер загружает 2,0 МБ вместо 7,6 МБ.</p>
+              <p><strong>Переводы под контролем.</strong> Автоматические проверки находят пропущенные переводы до выхода новой версии.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project-arundo">
+          <figure class="sam-chart" id="sam">
+            <figcaption><span class="eyebrow">SAM / ИНТЕРФЕЙС ОПЕРАТОРА</span><span>Данные для примера</span></figcaption>
+            <div class="chart-controls" role="group" aria-label="Показатель на диаграмме" hidden>
+              <button type="button" data-series="production" aria-pressed="true">Производство</button>
+              <button type="button" data-series="energy" aria-pressed="false">Расход энергии</button>
+              <button type="button" data-series="maintenance" aria-pressed="false">Обслуживание</button>
+            </div>
+            <p class="metric-caption" aria-live="polite">Прогноз объёма производства по неделям (т)</p>
+            <ol class="metric-bars" aria-label="Показатели за шесть недель">
+              <li style="--bar:60%"><b>60</b><span>1-я</span></li>
+              <li style="--bar:70%"><b>70</b><span>2-я</span></li>
+              <li style="--bar:64%"><b>64</b><span>3-я</span></li>
+              <li style="--bar:79%"><b>79</b><span>4-я</span></li>
+              <li style="--bar:84%"><b>84</b><span>5-я</span></li>
+              <li style="--bar:92%"><b>92</b><span>6-я</span></li>
+            </ol>
+          </figure>
+          <div class="project-copy">
+            <p class="eyebrow">ВИЗУАЛИЗАЦИЯ ДАННЫХ / ДИЗАЙН-СИСТЕМЫ</p>
+            <h3><a href="https://www.arundo.com/">Arundo Analytics <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+            <p>Система SAM помогает сотрудникам предприятий планировать объём выпуска, расход энергии и обслуживание оборудования. Я разрабатывал экраны и общие элементы интерфейса для этой системы.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="showroom" class="showroom gutter" aria-labelledby="showroom-title">
+      <div class="section-heading">
+        <h2 id="showroom-title">Мои <em>проекты</em></h2>
+        <a class="pill" href="https://github.com/ustinvaskin?tab=repositories">Проекты на GitHub <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
+      </div>
+      <div class="exhibits">
+        <article class="exhibit">
+          <div class="specimen specimen-code" aria-hidden="true">
+            <code>val x = 1 + 2 * 3;<br>print(x);</code>
+            <b>7<span>_</span></b>
+          </div>
+          <p class="eyebrow">JAVA / ЯЗЫКИ ПРОГРАММИРОВАНИЯ</p>
+          <h3><a href="https://github.com/ustinvaskin/TundraCore">TundraCore <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+          <p>Небольшой язык программирования, на котором я проверяю, как ИИ исправляет ошибки в коде. Для запуска программ на этом языке я написал интерпретатор на Java.</p>
+        </article>
+        <article class="exhibit">
+          <div class="specimen specimen-hash" aria-hidden="true">
+            <div class="hash-disc"></div>
+            <b>Sim<em>Hash</em></b>
+          </div>
+          <p class="eyebrow">RUST / ПРОИЗВОДИТЕЛЬНОСТЬ</p>
+          <h3><a href="https://github.com/ustinvaskin/headroom-kth-submission/commit/459674f52ee320e0ea82362a5a4c8270438006a8">Headroom <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+          <p>Я нашёл, где Headroom тратил лишнюю память при обработке текста. Убрал ненужные операции и сравнил производительность до и после.</p>
+        </article>
+        <article class="exhibit">
+          <div class="specimen specimen-sofie" aria-hidden="true">
+            <div class="rundown"><i></i><i></i><i></i></div>
+            <b>Rundown</b>
+          </div>
+          <p class="eyebrow">REACT / АВТОМАТИЗАЦИЯ ТЕЛЕВЕЩАНИЯ</p>
+          <h3><a href="https://github.com/ustinvaskin/sofie-core/commit/2e58ca8d8d4917bc466f377754a61666eb239434">Sofie Core <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+          <p>В системе для управления телеэфиром я исправил отображение предупреждений о медиафайлах. Когда оператор игнорирует предупреждение, теперь это видно во всех связанных разделах.</p>
+        </article>
+      </div>
+      <aside class="patch-note" aria-label="Вклад в проект с открытым кодом">
+        <p><strong>Immutable.js</strong> · Я сделал вывод <code>Range.toString()</code> понятнее. Изменение приняли 25 марта 2025 года.</p>
+        <a href="https://github.com/immutable-js/immutable-js/pull/2075/files">Посмотреть изменения <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
+      </aside>
+      <div id="early-projects" class="early-projects">
+        <h3 class="early-heading">Ранние проекты <span>2019</span></h3>
+        <div class="exhibits">
+          <article class="exhibit">
+            <div class="specimen fleet-art" aria-hidden="true">
+              <div class="fleet-grid"><i></i><i></i><i></i></div>
+            </div>
+            <p class="eyebrow">JAVASCRIPT / ИГРА В БРАУЗЕРЕ</p>
+            <h4>Потопи корабль, детка!</h4>
+            <a class="pill play-game-link" href="./games/sink-a-ship/game.html">Играть <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
+            <p>Свой первый «Морской бой» для браузера я сделал за неделю на курсе в General Assembly. В каждой новой партии корабли прячутся на случайных клетках.</p>
+          </article>
+          <article class="exhibit">
+            <div class="specimen lunar-art" aria-hidden="true">
+              <div class="lunar-orbit"></div>
+            </div>
+            <p class="eyebrow">REACT / АСТРОНОМИЯ</p>
+            <h4>Солнце и Луна</h4>
+            <p>Одно из моих первых приложений на React. Выбираете место и получаете данные о Солнце и Луне, а заодно и гороскоп на день. Данные поступали из трёх разных сервисов.</p>
+          </article>
+          <article class="exhibit">
+            <div class="specimen library-art" aria-hidden="true">
+              <div class="book-stack"><i></i><i></i><i></i></div>
+            </div>
+            <p class="eyebrow">REACT / NODE.JS / MONGODB</p>
+            <h4><a href="https://github.com/Deni402/project-3">BamBook <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h4>
+            <p>Мы сделали сайт, где можно обсуждать книги и публиковать свои истории. Я занимался формами, входом в аккаунт и тем, как сайт хранит и передаёт данные.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about gutter">
+      <div class="about-copy">
+        <h2>Обо <em>мне</em></h2>
+        <p>Я живу в Осло и делаю веб-интерфейсы, мобильные приложения и серверные сервисы. Особенно люблю разбираться в языках программирования и придумывать инструменты для разработчиков.</p>
+        <p>Мне нравится, когда удачный инструмент помогает разобраться в задаче, которая ещё минуту назад казалась запутанной.</p>
+        <a class="pill" href="./resume.html">Посмотреть резюме</a>
+        <a class="pill" href="#writing">Почитать статьи</a>
+      </div>
+      <div class="experience">
+        <h3 class="eyebrow">ОПЫТ</h3>
+        <dl>
+          <div><dt>Satvision Software <span>с 2023 года</span></dt><dd>Ведущий фронтенд-разработчик и разработчик мобильных приложений</dd></div>
+          <div><dt>Arundo Analytics <span>2021–2023</span></dt><dd>Старший фронтенд-разработчик</dd></div>
+          <div><dt><a href="https://en.itmo.ru/">Университет ИТМО</a> <span>2020</span></dt><dd>Фронтенд-разработчик, проект по городским данным</dd></div>
+        </dl>
+      </div>
+      <article class="film" id="film">
+        <div class="film-poster" aria-hidden="true">
+          <i class="ballot-slot"></i>
+          <strong>The<br><em>Drop</em></strong>
+        </div>
+        <div class="film-copy">
+          <p class="eyebrow">ДОКУМЕНТАЛЬНЫЙ ФИЛЬМ</p>
+          <h3>The Drop<span>Почему молодые люди не голосуют</span></h3>
+          <a class="film-award" href="https://beverlyhillsfilmfestival.com/2016-winners/">
+            <span aria-hidden="true">🏆</span>
+            <span><strong>Награда «Лучший продюсер»</strong> · Кинофестиваль в Беверли-Хиллз, 2016</span>
+          </a>
+          <p>В этом документальном фильме мы разбираемся, почему молодые люди редко ходят на выборы и как они участвуют в политике. Я работал над ним как ассистент продюсера Яна Уодделла.</p>
+          <a class="pill" href="https://vimeo.com/ondemand/thedrop">Посмотреть фильм на Vimeo <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
+        </div>
+      </article>
+    </section>
+
+    <section class="writing gutter" id="writing" aria-labelledby="writing-title">
+      <div class="section-heading">
+        <h2 id="writing-title">Избранные <em>статьи</em></h2>
+        <a class="pill" href="https://ustinvaskin.github.io/articles/">Все статьи <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
+      </div>
+      <p class="writing-intro">Пишу о разработке интерфейсов и делюсь тем, что узнаю в экспериментах с TundraTrace.</p>
+      <div class="reading-pair">
+        <article>
+          <p class="eyebrow">2020 / НА РУССКОМ</p>
+          <h3><a hreflang="ru" href="https://ustinvaskin.github.io/articles/2020/11/11/React-Hooks.html">Руководство по хукам React <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+          <p>Как вынести общую логику в свой хук и использовать его в нескольких компонентах.</p>
+        </article>
+        <article>
+          <p class="eyebrow">2026 / НА АНГЛИЙСКОМ</p>
+          <h3><a hreflang="en" href="https://ustinvaskin.github.io/articles/2026/05/18/When-Runtime-Evidence-Helps-LLMs-Repair-Code-and-When-It-Does-Not.html">Когда данные о запуске помогают исправить код <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+          <p>Когда ИИ полезно знать, что происходило в программе перед сбоем, а когда эти подсказки мешают.</p>
+        </article>
+        <article>
+          <p class="eyebrow">2026 / НА АНГЛИЙСКОМ</p>
+          <h3><a hreflang="en" href="https://ustinvaskin.github.io/articles/2026/05/13/Building-Tundra-Language-and-Interpreter-Part-4-From-Grammar-to-Testbed.html">Как Tundra стал площадкой для экспериментов <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3>
+          <p>Как я превратил небольшой язык программирования в среду, где можно сравнивать способы исправления ошибок.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="contact gutter">
+    <div class="contact-main">
+      <div><p class="eyebrow">НАПИШИТЕ МНЕ</p><h2>Связаться <em>со мной</em></h2><p>Есть вопрос или идея? Напишите мне.</p></div>
+      <form class="contact-form" id="contact-form" method="post" action="https://formspree.io/f/xldnekqn">
+        <fieldset>
+          <label for="contact-name">Имя <span>(необязательно)</span></label>
+          <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100">
+          <label for="contact-email">Электронная почта</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          <label for="contact-message">Сообщение</label>
+          <textarea id="contact-message" name="message" rows="5" maxlength="5000" required></textarea>
+          <div class="contact-trap" aria-hidden="true">
+            <label for="contact-gotcha">Оставьте это поле пустым</label>
+            <input id="contact-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="pill" type="submit">Отправить</button>
+        </fieldset>
+        <p class="contact-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="footer-links">
+      <span>© <span id="footer-year">2026</span> Устин Васькин</span>
+      <a href="https://www.linkedin.com/in/ustinvaskin/">LinkedIn</a>
+      <a href="https://github.com/ustinvaskin">GitHub</a>
+      <a href="#top">Наверх <span class="site-icon site-icon--up" aria-hidden="true"></span></a>
+    </div>
+  </footer>
+</body>
+</html>

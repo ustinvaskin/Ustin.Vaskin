@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TundraTrace — исследование о том, когда данные о запуске программы помогают языковым моделям исправлять ошибки в коде.">
+  <meta name="theme-color" content="#f5f2e9">
+  <title>TundraTrace — Устин Васькин</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=12">
+  <link rel="stylesheet" href="../assets/site-navigation.css?v=7">
+  <script src="../assets/site-navigation.js?v=7" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="monogram" href="./index.html" aria-label="Устин Васькин, главная">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+      <nav id="site-menu" aria-label="Основная навигация">
+        <a href="./index.html#work" aria-current="true">Работы</a>
+        <a href="./index.html#showroom">Проекты</a>
+        <a href="./index.html#about">Обо мне</a>
+        <a href="/articles/#start-here">Статьи</a>
+        <a href="./resume.html">Резюме</a>
+      </nav>
+      <div class="top-actions">
+        <a class="lang-switch" href="../tundra.html" hreflang="en" lang="en" aria-label="English version">ENG</a>
+
+        <button class="pill menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Меню</button>
+        <a class="pill top-contact" href="./index.html#contact" data-contact-trigger>Связаться</a>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="case-hero gutter">
+      <p class="eyebrow">ЯЗЫКИ ПРОГРАММИРОВАНИЯ / ИССЛЕДОВАНИЕ ИИ</p>
+      <h1>Tundra<wbr><span>Trace.</span></h1>
+      <div class="case-lede">
+        <p>Легче ли ИИ исправить ошибку, если он видит, что было до сбоя?</p>
+        <div><p>Я создал небольшой язык программирования, инструмент для запуска кода и набор задач. С их помощью я проверил, когда данные о запуске помогают языковым моделям исправлять ошибки.</p><a class="pill primary-action" href="#findings">К результатам <span class="site-icon site-icon--down" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="case-stamp" aria-hidden="true"><span>{</span><span>t</span><span>}</span></div>
+    </section>
+    <section class="case-intro gutter case-grid">
+      <div><p class="eyebrow">ИДЕЯ</p><h2>По следам<br><em>ошибки.</em></h2></div>
+      <div class="case-prose">
+        <p>Сообщение об ошибке помогает найти место сбоя. Иногда приходится разбираться дальше: какой путь прошла программа и откуда взялось значение, из-за которого всё остановилось?</p>
+        <p>TundraTrace ведёт краткий журнал запуска — трассировку. По нему можно узнать, откуда взялось значение. В эксперименте я давал модели один и тот же код с ошибкой и проверял, меняется ли результат, если добавить журнал.</p>
+        <p>Для эксперимента я разработал небольшой язык Tundra. На нём удобно составлять задачи и повторять их в одинаковых условиях.</p>
+      </div>
+    </section>
+    <section class="case-example gutter">
+      <div><p class="eyebrow">ПРИМЕР</p><h2>Откуда взялось<br><em>значение?</em></h2><p>Программа пытается прибавить 5 к цене. Сообщение об ошибке говорит, что складывать число с текстом нельзя. Журнал показывает, что цена записана как «10» — в виде текста.</p><a class="pill" href="./index.html#tundra-demo">Попробовать самому <span class="site-icon site-icon--external" aria-hidden="true"></span></a></div>
+      <div class="case-code">
+        <p>ПРОГРАММА</p>
+        <pre><code>val raw = { price: "10" };
+val total = raw.price + 5;
+print(total);</code></pre>
+        <p>ДАННЫЕ О ЗАПУСКЕ</p>
+        <pre><code>Cannot add String and Number
+raw.price was string "10"</code></pre>
+      </div>
+    </section>
+    <section class="case-architecture gutter">
+      <div class="section-heading"><h2>Как всё <em>устроено.</em></h2></div>
+      <div class="architecture-grid">
+        <article><p class="eyebrow">ЗАПУСК КОДА</p><h3>TundraCore</h3><p>Интерпретатор, написанный на Java, запускает программы на Tundra.</p><a href="https://github.com/ustinvaskin/TundraCore">Код интерпретатора <span class="site-icon site-icon--external" aria-hidden="true"></span></a></article>
+        <article><p class="eyebrow">ЖУРНАЛ ЗАПУСКА</p><h3>TundraTrace</h3><p>Версия интерпретатора, которая записывает, что происходило в программе до сбоя.</p><a href="https://github.com/ustinvaskin/TundraTrace">Код трассировки <span class="site-icon site-icon--external" aria-hidden="true"></span></a></article>
+        <article><p class="eyebrow">ПРОВЕРКА</p><h3>TundraBench</h3><p>Набор задач и инструментов, чтобы оценить каждое исправление и проверить, меняет ли журнал запуска результат.</p><a href="https://github.com/ustinvaskin/TundraBench">Код и задачи <span class="site-icon site-icon--external" aria-hidden="true"></span></a></article>
+      </div>
+    </section>
+    <section id="findings" class="case-findings gutter">
+      <div><p class="eyebrow">РЕЗУЛЬТАТЫ ЭКСПЕРИМЕНТА</p><h2>В среднем<br><em>помогает.</em></h2><p>Я проверил три модели на 36 задачах. Каждая модель решала каждую задачу по три раза с данными о запуске и по три раза без них. Перед проверкой я убирал из ответов пояснения и разметку, чтобы оценить сам код.</p></div>
+      <div class="case-results">
+        <div><span>БЕЗ ДАННЫХ О ЗАПУСКЕ</span><strong>59,9<small>%</small></strong><p>194 успешных исправления из 324 попыток.</p></div>
+        <div><span>С ДАННЫМИ О ЗАПУСКЕ</span><strong>70,4<small>%</small></strong><p>228 успешных исправлений из 324 попыток.</p></div>
+        <p class="case-caveat">Журнал помогал по-разному в зависимости от модели и задачи. Там, где данные почти не подсказывали, что исправить, устойчивого улучшения не было. Повторится ли этот эффект на других языках и в реальных проектах, ещё предстоит проверить.</p>
+        <a href="https://github.com/ustinvaskin/TundraTrace-artifacts/blob/main/bench/results/curated/final-run-summary-2026-05-15.md">Полные результаты на английском <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
+      </div>
+    </section>
+    <section class="case-reading gutter">
+      <h2>Статьи <em>о проекте.</em></h2>
+      <div class="reading-pair">
+        <article><p class="eyebrow">ИССЛЕДОВАНИЕ / НА АНГЛИЙСКОМ</p><h3><a hreflang="en" href="https://ustinvaskin.github.io/articles/2026/05/18/When-Runtime-Evidence-Helps-LLMs-Repair-Code-and-When-It-Does-Not.html">Когда данные о запуске помогают исправить код <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3><p>Что показал эксперимент и какие вопросы пока остаются открытыми.</p></article>
+        <article><p class="eyebrow">СОЗДАНИЕ TUNDRA / НА АНГЛИЙСКОМ</p><h3><a hreflang="en" href="https://ustinvaskin.github.io/articles/2026/05/13/Building-Tundra-Language-and-Interpreter-Part-4-From-Grammar-to-Testbed.html">Как Tundra стал площадкой для экспериментов <span class="site-icon site-icon--external" aria-hidden="true"></span></a></h3><p>Как я превратил язык и интерпретатор в инструмент для проверки моделей.</p></article>
+      </div>
+      <a class="pill" href="https://github.com/ustinvaskin/TundraTrace-artifacts">Материалы исследования <span class="site-icon site-icon--external" aria-hidden="true"></span></a>
+    </section>
+  </main>
+  <footer class="case-footer gutter">
+    <a class="monogram" href="./index.html">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+    <span>© Устин Васькин</span>
+    <a href="./index.html#work">Вернуться к работам <span class="site-icon site-icon--up" aria-hidden="true"></span></a>
+  </footer>
+</body>
+</html>

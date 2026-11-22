@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Резюме Устина Васькина. Разрабатываю веб-интерфейсы, мобильные приложения и инструменты для исследования кода.">
+  <meta name="theme-color" content="#f5f2e9">
+  <title>Резюме — Устин Васькин</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=12">
+  <link rel="stylesheet" href="../assets/site-navigation.css?v=7">
+  <script src="../assets/site-navigation.js?v=7" defer></script>
+  <link rel="stylesheet" href="../assets/resume.css?v=3">
+  <script src="./assets/resume.js?v=2" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="monogram" href="./index.html" aria-label="Устин Васькин — на главную">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+      <nav id="site-menu" aria-label="Основная навигация">
+        <a href="./index.html#work">Работы</a>
+        <a href="./index.html#showroom">Проекты</a>
+        <a href="./index.html#about">Обо мне</a>
+        <a href="/articles/#start-here">Статьи</a>
+        <a href="./resume.html" aria-current="page">Резюме</a>
+      </nav>
+      <div class="top-actions">
+        <a class="lang-switch" href="../resume.html" hreflang="en" lang="en" aria-label="English version">ENG</a>
+
+        <button class="pill menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Меню</button>
+        <a class="pill top-contact" href="./index.html#contact" data-contact-trigger>Связаться</a>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="resume gutter">
+    <div class="resume-intro">
+      <section class="resume-header" aria-labelledby="resume-name">
+        <h1 id="resume-name">Устин <em>Васькин</em></h1>
+        <p class="resume-title">Старший разработчик ПО · React, TypeScript, .NET</p>
+        <a class="resume-github" href="https://github.com/ustinvaskin">github.com/ustinvaskin</a>
+        <div class="resume-actions">
+          <a class="pill primary-action" href="./index.html#contact" data-contact-trigger>Связаться</a>
+          <button class="pill resume-copy" type="button" hidden>Скопировать ссылку</button>
+          <button class="pill resume-print" type="button" hidden>Распечатать резюме</button>
+          <span class="resume-copy-status" role="status"></span>
+        </div>
+      </section>
+      <nav class="resume-highlights" aria-label="Основные результаты">
+        <p class="eyebrow">Основные результаты</p>
+        <ul>
+          <li><a href="#satvision-build">
+            <span class="resume-metric">
+              <strong>≈39%</strong>
+              <span class="result-sketch sketch-build" aria-hidden="true"><i></i><i></i></span>
+            </span>
+            <span class="result-description">Меньше времени на сборку веб-приложения</span>
+            <span class="site-icon site-icon--down" aria-hidden="true"></span>
+          </a></li>
+          <li><a href="#arundo-design">
+            <span class="resume-metric">
+              <strong>3 команды</strong>
+              <span class="result-sketch sketch-teams" aria-hidden="true"><i></i><i></i><i></i></span>
+            </span>
+            <span class="result-description">Перешли на общую дизайн-систему</span>
+            <span class="site-icon site-icon--down" aria-hidden="true"></span>
+          </a></li>
+          <li><a href="#tundra-result">
+            <span class="resume-metric">
+              <strong>+10,5 п. п.</strong>
+              <span class="result-sketch sketch-research" aria-hidden="true"><i></i><i></i></span>
+            </span>
+            <span class="result-description">Рост доли успешных исправлений в эксперименте TundraTrace</span>
+            <span class="site-icon site-icon--down" aria-hidden="true"></span>
+          </a></li>
+        </ul>
+      </nav>
+    </div>
+    <nav class="resume-contents" aria-label="Разделы резюме">
+      <ul>
+        <li><a href="#resume-experience">Опыт работы</a></li>
+        <li><a href="#resume-research">Исследования</a></li>
+        <li><a href="#resume-open-source">Проекты с открытым кодом</a></li>
+        <li><a href="#resume-education">Образование</a></li>
+        <li><a href="#resume-skills">Навыки</a></li>
+        <li><a href="#resume-languages">Языки</a></li>
+        <li><a href="#resume-awards">Награды</a></li>
+      </ul>
+    </nav>
+    <section class="resume-tech" aria-labelledby="resume-tech-title" hidden>
+      <div class="resume-tech-label">
+        <h2 id="resume-tech-title">Технологии в работе</h2>
+        <p>Выберите технологию, чтобы увидеть, где я её применял.</p>
+      </div>
+      <div class="resume-tech-options">
+        <button class="pill" type="button" data-tech="react" aria-pressed="false">React</button>
+        <button class="pill" type="button" data-tech="typescript" aria-pressed="false">TypeScript</button>
+        <button class="pill" type="button" data-tech="flutter" aria-pressed="false">Flutter</button>
+        <button class="pill" type="button" data-tech="sqlite" aria-pressed="false">SQLite</button>
+        <button class="pill" type="button" data-tech="dotnet" aria-pressed="false">.NET</button>
+        <button class="pill" type="button" data-tech="java" aria-pressed="false">Java</button>
+      </div>
+      <div class="resume-tech-dock" hidden>
+        <p class="resume-tech-status" role="status"></p>
+        <button class="pill" type="button" data-next-match>Дальше</button>
+        <button class="pill" type="button" data-clear-tech>Сбросить</button>
+      </div>
+    </section>
+    <div class="resume-grid">
+      <div class="resume-main">
+        <section id="resume-experience">
+          <h2>Опыт работы</h2>
+          <article class="resume-role" id="role-satvision">
+            <h3><span class="role-company">Satvision Software:</span> Ведущий фронтенд-разработчик и разработчик мобильных приложений <small>С октября 2023 года</small></h3>
+            <ul>
+              <li>Улучшил режим работы без интернета. Транзакции SQLite помогают сохранить изменения и вложения на устройстве при синхронизации.</li>
+              <li>Повысил надёжность мобильного приложения. Исправил ошибки при входе, обновлении базы данных и загрузке данных из кеша.</li>
+              <li>Разработал помощника на базе языковой модели. Использовал потоковую передачу данных через ASP.NET, React, типизированные API и Model Context Protocol (MCP).</li>
+              <li>Улучшил систему перевода приложения и добавил автоматическую проверку переводов с помощью ESLint и CI.</li>
+              <li id="satvision-build" class="resume-result">Обновил Vite и сократил время сборки примерно на 39%. При первом открытии приложения браузер теперь загружает 2,0 МБ вместо 7,6 МБ.</li>
+              <li>Добавил автоматические проверки безопасности в CI, устранил опасную XSS-уязвимость и исправил проблемы безопасности в npm-зависимостях.</li>
+              <li>Спроектировал и создал общую библиотеку компонентов React, чтобы интерфейс выглядел единообразно и его было проще поддерживать.</li>
+            </ul>
+            <p>Технологии: Flutter, Dart, SQLite, React, TypeScript, ASP.NET Core, C#, MCP, i18next, Vite, ESLint, CI/CD.</p>
+            <p>Октябрь 2023 — март 2025</p>
+            <ul>
+              <li>Руководил внедрением поддержки часовых поясов в интерфейсе и на сервере. Время хранится в UTC, а интерфейс отображает его в часовом поясе организации. Настройка доступна во всём приложении.</li>
+              <li>Помог наладить интеграционное тестирование серверной части. Получилось 57 тестов в 16 наборах для шести групп API.</li>
+            </ul>
+            <p>Технологии: TypeScript, React, C#, .NET, SQL, Jest, Playwright, Azure DevOps.</p>
+          </article>
+          <article class="resume-role" id="role-arundo">
+            <h3><span class="role-company">Arundo Analytics:</span> Фронтенд-разработчик, затем старший фронтенд-разработчик <small>Февраль 2021 — октябрь 2023</small></h3>
+            <ul>
+              <li>Вместе со специалистами по данным добавил в интерфейс аналитической системы результаты моделей машинного обучения.</li>
+              <li>Проектировал и создавал интерфейсы для поиска отклонений и наблюдения за состоянием оборудования. Использовал TimescaleDB и Apache ECharts.</li>
+              <li id="arundo-design" class="resume-result">Разработал библиотеку компонентов React и дизайн-систему, которыми начали пользоваться три команды.</li>
+            </ul>
+            <p>Технологии: TypeScript, React, Next.js, Redux, Apache ECharts, TimescaleDB, Storybook, SQL.</p>
+          </article>
+          <article class="resume-role" id="role-itmo">
+            <h3><span class="role-company">Университет ИТМО:</span> Фронтенд-разработчик в проекте по городским данным <small>Февраль — декабрь 2020</small></h3>
+            <ul>
+              <li>Вместе с четырьмя исследователями разрабатывал прототипы и готовые визуализации городских данных, в том числе интерактивные карты на Leaflet.js.</li>
+            </ul>
+            <p>Технологии: React, Node.js, Python, SQL, Leaflet.js, Matplotlib, Webpack.</p>
+          </article>
+        </section>
+        <section id="resume-research">
+          <h2>Исследования</h2>
+          <h3>TundraTrace — как языковые модели исправляют код (с 2026 года)</h3>
+          <ul>
+            <li>Создал экспериментальный язык программирования Tundra, интерпретатор для запуска программ и инструменты для проверки решений и исправлений.</li>
+            <li>Подготовил тестовую среду, чтобы выяснить, помогает ли языковой модели информация о том, как выполнялась программа до ошибки.</li>
+            <li>Разобрал 30 исправлений, предложенных моделью, чтобы понять, как эта информация влияет на её решения и ошибки.</li>
+            <li id="tundra-result" class="resume-result">В контролируемом эксперименте эти данные повысили долю успешных исправлений с 59,9% до 70,4%. Перед проверкой я убирал из ответов пояснения и разметку, чтобы оценить сам код.</li>
+            <li>Продолжаю работу над проектом.</li>
+          </ul>
+          <p>Технологии: Java, Python, собственный интерпретатор, отслеживание происхождения значений по ходу выполнения программы, инструменты оценки.</p>
+        </section>
+      </div>
+      <div class="resume-supporting">
+        <section id="resume-open-source">
+          <h2>Проекты с открытым кодом</h2>
+          <h3>Headroom — Rust</h3>
+          <ul>
+            <li>Ускорил реализацию SimHash на Rust. Время локального сжатия сократилось на 17–28% в тестах, где в тексте преобладали символы ASCII.</li>
+          </ul>
+          <p>Технологии: Rust, SimHash, замеры производительности.</p>
+          <h3>Sofie Automation — React</h3>
+          <ul>
+            <li>Улучшил фильтрацию файлов по статусу на разных экранах. Проверил, как выглядят изменения, и добавил тесты, чтобы ошибка не вернулась.</li>
+          </ul>
+          <p>Технологии: React, регрессионное тестирование.</p>
+        </section>
+        <section id="resume-education">
+          <h2>Образование</h2>
+          <p>Heriot-Watt University. Принят на магистерскую программу по информатике (MSc Computer Science).</p>
+          <p>Санкт-Петербургский государственный университет. Диплом о профессиональной переподготовке по разработке ПО (сентябрь — декабрь 2020).</p>
+          <p>General Assembly. Интенсив по разработке ПО (октябрь 2019 — январь 2020).</p>
+        </section>
+        <section id="resume-skills">
+          <h2>Навыки</h2>
+          <p>Языки программирования: TypeScript, JavaScript, Python, Java.</p>
+          <p>Веб и мобильная разработка: React, Next.js, Flutter, MUI, TanStack Query.</p>
+          <p>Серверная часть и данные: ASP.NET Core (.NET 8), Node.js, REST API, SQLite, TimescaleDB.</p>
+          <p>Инструменты разработки: GitHub Actions, Azure DevOps, Playwright, Jest, Vite, ESLint, Sentry.</p>
+          <p>ИИ: интеграция языковых моделей, Model Context Protocol (MCP).</p>
+        </section>
+        <section id="resume-languages">
+          <h2>Языки</h2>
+          <p>Норвежский, английский, русский.</p>
+        </section>
+        <section id="resume-awards">
+          <h2>Награды и достижения</h2>
+          <p>Работал ассистентом продюсера Яна Уодделла над фильмом «The Drop: Почему молодые люди не голосуют». Фильм получил награду «Лучший продюсер» на кинофестивале в Беверли-Хиллз в 2016 году.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="case-footer gutter">
+    <a class="monogram" href="./index.html">UV<span class="monogram-dot" aria-hidden="true"></span></a>
+    <span>© Устин Васькин</span>
+    <a href="./index.html#work">К избранным работам <span class="site-icon site-icon--up" aria-hidden="true"></span></a>
+  </footer>
+</body>
+</html>

@@ -1,4 +1,5 @@
 (() => {
+  const isRussian = document.documentElement.lang === "ru";
   const header = document.querySelector(".site-header");
   const menu = document.querySelector("#site-menu");
   const toggle = header.querySelector(".menu-toggle");
@@ -81,7 +82,7 @@
       event.preventDefault();
       if (button.disabled) return;
       button.disabled = true;
-      status.textContent = "Sending your message…";
+      status.textContent = isRussian ? "Сообщение отправляется…" : "Sending your message…";
       try {
         const response = await fetch(form.action, {
           method: "POST",
@@ -91,10 +92,10 @@
         if (!response.ok) throw new Error("Submission failed");
         form.reset();
         button.setAttribute("data-delivered", "");
-        button.textContent = "Delivered";
-        status.textContent = "Thanks for your message. I’ll get back to you soon.";
+        button.textContent = isRussian ? "Отправлено" : "Delivered";
+        status.textContent = isRussian ? "Спасибо! Отвечу на указанный адрес." : "Thanks for your message. I’ll get back to you soon.";
       } catch {
-        status.textContent = "Your message could not be sent. Please try again.";
+        status.textContent = isRussian ? "Сообщение не отправилось. Ваш текст сохранён в форме. Попробуйте ещё раз." : "Your message could not be sent. Please try again.";
       } finally {
         button.disabled = false;
       }
@@ -109,8 +110,8 @@
   dialog.className = "contact-dialog";
   dialog.setAttribute("aria-labelledby", "contact-dialog-title");
   dialog.innerHTML = `
-    <button class="pill contact-close" type="button" aria-label="Close contact form">×</button>
-    <h2 id="contact-dialog-title">Get in <em>touch.</em></h2>
+    <button class="pill contact-close" type="button" aria-label="${isRussian ? 'Закрыть форму' : 'Close contact form'}">×</button>
+    <h2 id="contact-dialog-title">${isRussian ? 'Связаться <em>со мной</em>' : 'Get in <em>touch.</em>'}</h2>
     <div data-contact-panel></div>
   `;
   document.body.append(dialog);
@@ -163,7 +164,7 @@
       opener = link;
       previousScroll = { left: window.scrollX, top: window.scrollY, behavior: "instant" };
       setMenu(false);
-      panel.textContent = form ? "" : "Loading contact form…";
+      panel.textContent = form ? "" : (isRussian ? "Загрузка формы…" : "Loading contact form…");
       panel.setAttribute("aria-busy", String(!form));
       dialog.showModal();
       closeButton.focus();
@@ -174,10 +175,10 @@
         if (dialog.open) {
           const fallback = document.createElement("p");
           fallback.dataset.contactFallback = "";
-          fallback.textContent = "Couldn’t load the form. ";
+          fallback.textContent = isRussian ? "Не удалось загрузить форму. " : "Couldn’t load the form. ";
           const directLink = document.createElement("a");
           directLink.href = link.href;
-          directLink.textContent = "Open the contact page";
+          directLink.textContent = isRussian ? "Перейти к форме на главной" : "Open the contact page";
           fallback.append(directLink);
           panel.replaceChildren(fallback);
         }
